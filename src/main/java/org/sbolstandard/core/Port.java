@@ -12,8 +12,10 @@ public class Port
 	private URI directionality;
 	private ComponentInstantiation exposes;
 	
-	public Port(URI identity, String displayId) {
+	public Port(URI identity, String displayId, ComponentInstantiation exposes) {
 		super(identity, displayId);
+
+		this.exposes = exposes;
 	}
 
 	/**
@@ -36,12 +38,4 @@ public class Port
 	public ComponentInstantiation getExposes() {
 		return exposes;
 	}
-
-	/**
-	 * @param exposes the exposes to set
-	 */
-	public void setExposes(ComponentInstantiation exposes) {
-		this.exposes = exposes;
-	}
-
 }

@@ -11,6 +11,12 @@ public class Participation
 	private URI role;
 	private Signal participant;
 	
+	/**
+	 * 
+	 * @param identity
+	 * @param role
+	 * @param participant
+	 */
 	public Participation(URI identity, URI role, Signal participant) {
 		super(identity);
 		this.role = role;

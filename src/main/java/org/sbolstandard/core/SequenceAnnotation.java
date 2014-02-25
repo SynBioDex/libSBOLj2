@@ -2,6 +2,8 @@ package org.sbolstandard.core;
 
 import java.net.URI;
 
+import org.apache.commons.lang.ArrayUtils;
+
 
 public class SequenceAnnotation 
 		extends ComponentInstantiation {
@@ -20,13 +22,12 @@ public class SequenceAnnotation
 	public SequenceAnnotation(URI identity, String displayId, SequencedComponent instantiates) {
 		super(identity, displayId);
 		
-		this.setInstantiates(instantiates);
+		this.instantiates = instantiates;
 	}
 
 	@Override
-	public Component getInstantiated() {
-		// TODO Auto-generated method stub
-		return null;
+	public SequencedComponent getInstantiated() {
+		return this.instantiates;
 	}
 
 	/**
@@ -83,10 +84,24 @@ public class SequenceAnnotation
 	/**
 	 * getPrecedes
 	 * 
-	 * @return
+	 * @return a list of all predecessors of this sequence annotation
 	 */
-	public SequenceAnnotation getPrecedes() {
-		return precedes;
+	public SequenceAnnotation[] getPreceded() {
+		/*
+		 * iterate (recursively) over all predecessors and build the array
+		 * here, we utilize the Apache Commons Lang library... 
+		 */
+		SequenceAnnotation[] sa = null;
+		if(null != this.precedes) {
+			sa = (SequenceAnnotation[])ArrayUtils.add(
+					this.precedes.getPreceded(), 
+					this.precedes);
+		} else {
+			sa = new SequenceAnnotation[1];
+			sa[0] = this.precedes;
+			return sa;
+		}
+		return sa;
 	}
 
 	/**
@@ -96,23 +111,5 @@ public class SequenceAnnotation
 	public void setPrecedes(SequenceAnnotation precedes) {
 		this.precedes = precedes;
 	}
-
 	
-	/**
-	 * setPrecedes
-	 * 
-	 * @return
-	 */
-	public SequencedComponent getInstantiates() {
-		return instantiates;
-	}
-
-	/**
-	 * setInstantiates
-	 * 
-	 */
-	public void setInstantiates(SequencedComponent instantiates) {
-		this.instantiates = instantiates;
-	}
-
 }

@@ -12,8 +12,11 @@ public class PortMap
 	private Port port;
 	private ComponentInstantiation mapping;
 	
-	public PortMap(URI identity, Port port) {
+	public PortMap(URI identity, Port port, ComponentInstantiation mapping) {
 		super(identity);
+		
+		this.port = port;
+		this.mapping = mapping;
 	}
 
 	/**
@@ -28,13 +31,6 @@ public class PortMap
 	 */
 	public ComponentInstantiation getMapping() {
 		return mapping;
-	}
-
-	/**
-	 * @param mapping the mapping to set
-	 */
-	public void setMapping(ComponentInstantiation mapping) {
-		this.mapping = mapping;
 	}
 
 }

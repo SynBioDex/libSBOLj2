@@ -15,7 +15,6 @@ public class Interaction
 
 	private URI type;
 	private Collection<Participation> participations;
-	private Signal participant;
 	
 	/**
 	 * 
@@ -26,11 +25,12 @@ public class Interaction
 	 * @param participant
 	 */
 	public Interaction(
-			URI identity, String displayId, 
-			URI type, Collection<Participation> participations, Signal participant) {
+			URI identity, String displayId, URI type, 
+			Collection<Participation> participations) {
 		super(identity, displayId);
 
 		this.type = type;
+		this.participations = participations;
 	}
 
 	/**
@@ -48,27 +48,5 @@ public class Interaction
 		return participations;
 	}
 
-	/**
-	 * @param participations the participations to set
-	 */
-	public void setParticipations(Collection<Participation> participations) {
-		this.participations = participations;
-	}
-
-	/**
-	 * @return the participant
-	 */
-	public Signal getParticipant() {
-		return participant;
-	}
-
-	/**
-	 * @param participant the participant to set
-	 */
-	public void setParticipant(Signal participant) {
-		this.participant = participant;
-	}
-	
-	
 
 }
