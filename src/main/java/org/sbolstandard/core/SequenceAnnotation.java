@@ -2,6 +2,7 @@ package org.sbolstandard.core;
 
 import java.net.URI;
 
+
 public class SequenceAnnotation 
 		extends ComponentInstantiation {
 
@@ -9,14 +10,14 @@ public class SequenceAnnotation
 	private int end;
 	private Orientation orientation;
 	private SequenceAnnotation precedes;
-	private SequenceComponent instantiates;
+	private SequencedComponent instantiates;
 	
 	/**
 	 * 
 	 * @param identity
 	 * @param displayId
 	 */
-	public SequenceAnnotation(URI identity, String displayId, SequenceComponent instantiates) {
+	public SequenceAnnotation(URI identity, String displayId, SequencedComponent instantiates) {
 		super(identity, displayId);
 		
 		this.setInstantiates(instantiates);
@@ -102,7 +103,7 @@ public class SequenceAnnotation
 	 * 
 	 * @return
 	 */
-	public SequenceComponent getInstantiates() {
+	public SequencedComponent getInstantiates() {
 		return instantiates;
 	}
 
@@ -110,7 +111,7 @@ public class SequenceAnnotation
 	 * setInstantiates
 	 * 
 	 */
-	public void setInstantiates(SequenceComponent instantiates) {
+	public void setInstantiates(SequencedComponent instantiates) {
 		this.instantiates = instantiates;
 	}
 

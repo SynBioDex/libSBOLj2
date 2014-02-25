@@ -8,15 +8,15 @@ import java.util.Collection;
  * 
  * @author Ernst Oberortner
  */
-public class SequenceComponent 
+public class SequencedComponent 
 		extends Component {
 
 	private URI sequenceType;
 	private Sequence sequence;
 	private Collection<SequenceAnnotation> sequenceAnnotations;
-	private Collection<Port> ports;
+	private Port[] ports;
 	
-	public SequenceComponent(URI identity, String displayId, URI type, URI sequenceType) {
+	public SequencedComponent(URI identity, String displayId, URI type, URI sequenceType) {
 		super(identity, displayId, type);
 		
 		this.sequenceType = sequenceType;
@@ -24,10 +24,6 @@ public class SequenceComponent
 
 	public URI getSequenceType() {
 		return sequenceType;
-	}
-
-	public void setSequenceType(URI sequenceType) {
-		this.sequenceType = sequenceType;
 	}
 
 	public Sequence getSequence() {
@@ -42,11 +38,11 @@ public class SequenceComponent
 		return this.sequenceAnnotations;
 	}
 
-	public Collection<Port> getPorts() {
+	public Port[] getPorts() {
 		return ports;
 	}
 
-	public void setPorts(Collection<Port> ports) {
+	public void setPorts(Port[] ports) {
 		this.ports = ports;
 	}
 	

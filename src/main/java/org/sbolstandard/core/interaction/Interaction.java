@@ -17,12 +17,20 @@ public class Interaction
 	private Collection<Participation> participations;
 	private Signal participant;
 	
+	/**
+	 * 
+	 * @param identity
+	 * @param displayId
+	 * @param type
+	 * @param participations
+	 * @param participant
+	 */
 	public Interaction(
 			URI identity, String displayId, 
 			URI type, Collection<Participation> participations, Signal participant) {
 		super(identity, displayId);
-		
-		this.setType(type);
+
+		this.type = type;
 	}
 
 	/**
@@ -32,12 +40,6 @@ public class Interaction
 		return type;
 	}
 
-	/**
-	 * @param type the type to set
-	 */
-	public void setType(URI type) {
-		this.type = type;
-	}
 
 	/**
 	 * @return the participations

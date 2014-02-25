@@ -20,70 +20,51 @@ public class Model
 	private URI framework;
 	private URI role;
 	
+	/**
+	 * 
+	 * @param identity   ... the identity URI of the model
+	 * @param displayId  ... the displayId as String of the model
+	 * @param source     ... the source's URI of the model
+	 * @param language   ... the language's URI of the model
+	 * @param framework  ... the framework's URI of the model
+	 * @param role       ... the role's URI of the model
+	 */
 	public Model(URI identity, String displayId, 
 			URI source, URI language, URI framework, URI role) {
 		super(identity, displayId);
 		
-		this.setSource(source);
-		this.setLanguage(language);
-		this.setFramework(framework);
-		this.setRole(role);				
+		this.source = source;
+		this.language = language;
+		this.framework = framework;
+		this.role = role;
 	}
 
 	/**
-	 * @return the source
+	 * @return the source's URI
 	 */
 	public URI getSource() {
 		return source;
 	}
 
 	/**
-	 * @param source the source to set
-	 */
-	public void setSource(URI source) {
-		this.source = source;
-	}
-
-	/**
-	 * @return the language
+	 * @return the language's URI
 	 */
 	public URI getLanguage() {
 		return language;
 	}
 
 	/**
-	 * @param language the language to set
-	 */
-	public void setLanguage(URI language) {
-		this.language = language;
-	}
-
-	/**
-	 * @return the framework
+	 * @return the framework's URI
 	 */
 	public URI getFramework() {
 		return framework;
 	}
 
 	/**
-	 * @param framework the framework to set
-	 */
-	public void setFramework(URI framework) {
-		this.framework = framework;
-	}
-
-	/**
-	 * @return the role
+	 * @return the role's URI
 	 */
 	public URI getRole() {
 		return role;
-	}
-
-	/**
-	 * @param role the role to set
-	 */
-	public void setRole(URI role) {
-		this.role = role;
 	}
 
 }

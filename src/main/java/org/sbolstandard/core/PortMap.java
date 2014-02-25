@@ -14,7 +14,6 @@ public class PortMap
 	
 	public PortMap(URI identity, Port port) {
 		super(identity);
-		this.setPort(port);
 	}
 
 	/**
@@ -22,13 +21,6 @@ public class PortMap
 	 */
 	public Port getPort() {
 		return port;
-	}
-
-	/**
-	 * @param port the port to set
-	 */
-	public void setPort(Port port) {
-		this.port = port;
 	}
 
 	/**

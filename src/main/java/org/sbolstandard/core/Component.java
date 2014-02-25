@@ -6,7 +6,7 @@ import java.net.URI;
  * 
  * @author Ernst Oberortner
  */
-public class Component 
+public abstract class Component 
 	extends Documented {
 
 	private URI type;
@@ -19,7 +19,7 @@ public class Component
 	/**
 	 * getType
 	 * 
-	 * @return the URI of the type
+	 * @return the URI of the component's type
 	 */
 	public URI getType() {
 		return this.type;

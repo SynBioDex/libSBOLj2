@@ -3,30 +3,31 @@ package org.sbolstandard.core.interaction;
 import java.net.URI;
 
 import org.sbolstandard.core.Identified;
+import org.sbolstandard.core.Signal;
 
 public class Participation 
 	extends Identified {
 
 	private URI role;
+	private Signal participant;
 	
-	public Participation(URI identity, URI role) {
+	public Participation(URI identity, URI role, Signal participant) {
 		super(identity);
-		
-		this.setRole(role);
+		this.role = role;
+		this.participant = participant;
 	}
 
 	/**
 	 * @return the role
 	 */
 	public URI getRole() {
-		return role;
+		return this.role;
 	}
 
 	/**
-	 * @param role the role to set
+	 * 
 	 */
-	public void setRole(URI role) {
-		this.role = role;
+	public Signal getParticipant() {
+		return this.participant;
 	}
-
 }
