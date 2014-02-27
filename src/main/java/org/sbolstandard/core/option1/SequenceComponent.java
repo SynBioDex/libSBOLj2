@@ -1,22 +1,25 @@
-package org.sbolstandard.core;
+package org.sbolstandard.core.option1;
 
 import java.net.URI;
 import java.util.Collection;
+
+import org.sbolstandard.core.Component;
+import org.sbolstandard.core.Port;
 
 
 /**
  * 
  * @author Ernst Oberortner
  */
-public class SequencedComponent 
+public class SequenceComponent
 		extends Component {
 
 	private URI sequenceType;
 	private Sequence sequence;
-	private Collection<SequenceAnnotation> sequenceAnnotations;
-	private Port[] ports;
+	protected Collection<SequenceAnnotation> sequenceAnnotations;
+	private Collection<Port> ports;
 	
-	public SequencedComponent(URI identity, String displayId, URI type, URI sequenceType) {
+	public SequenceComponent(URI identity, String displayId, URI type, URI sequenceType) {
 		super(identity, displayId, type);
 		
 		this.sequenceType = sequenceType;
@@ -34,15 +37,20 @@ public class SequencedComponent
 		this.sequence = sequence;
 	}
 	
+	/**
+	 * 
+	 * @return 
+	 * @return a collection of SequenceAnnotations
+	 */
 	public Collection<SequenceAnnotation> getSequenceAnnotations() {
 		return this.sequenceAnnotations;
 	}
 
-	public Port[] getPorts() {
+	public Collection<Port> getPorts() {
 		return ports;
 	}
 
-	public void setPorts(Port[] ports) {
+	public void setPorts(Collection<Port> ports) {
 		this.ports = ports;
 	}
 	

@@ -4,7 +4,7 @@ import java.net.URI;
 
 import org.sbolstandard.core.Component;
 import org.sbolstandard.core.Module;
-import org.sbolstandard.core.SequencedComponent;
+import org.sbolstandard.core.option1.SequenceComponent;
 
 public class ToggleSwitch {
 
@@ -34,31 +34,31 @@ public class ToggleSwitch {
 		
 		// we have 5 components:
 		// 2 promoters
-		Component p1 = new SequencedComponent(
+		Component p1 = new SequenceComponent(
 				URI.create("http://sbolstandard.org/toggle-switch/p1"), 
 				"Promoter p1",
 				URI.create("http://www.sequenceontology.org/miso/current_release/term/SO:0000167"),
 				URI.create("http://www.sequenceontology.org/browser/current_release/term/SO:0000352"));
-		Component p2 = new SequencedComponent(
+		Component p2 = new SequenceComponent(
 				URI.create("http://sbolstandard.org/toggle-switch/p2"), 
 				"Promoter p2",
 				URI.create("http://www.sequenceontology.org/miso/current_release/term/SO:0000167"),
 				URI.create("http://www.sequenceontology.org/browser/current_release/term/SO:0000352"));
 		
 		// 2 repressors
-		Component c1 = new SequencedComponent(
+		Component c1 = new SequenceComponent(
 				URI.create("http://sbolstandard.org/toggle-switch/c1"), 
 				"Coding Sequence c1 (Repressor)",
 				URI.create("http://www.sequenceontology.org/miso/current_release/term/SO:0001580"),
 				URI.create("http://www.sequenceontology.org/browser/current_release/term/SO:0000352"));
-		Component c2 = new SequencedComponent(
+		Component c2 = new SequenceComponent(
 				URI.create("http://sbolstandard.org/toggle-switch/c2"), 
 				"Coding Sequence c2 (Repressor)",
 				URI.create("http://www.sequenceontology.org/miso/current_release/term/SO:0001580"),
 				URI.create("http://www.sequenceontology.org/browser/current_release/term/SO:0000352"));
 
 		// 1 reporter (e.g. GFP)
-		Component gfp = new SequencedComponent(
+		Component gfp = new SequenceComponent(
 				URI.create("http://sbolstandard.org/toggle-switch/gfp"), 
 				"Reporting Gene GFP",
 				URI.create("http://www.sequenceontology.org/miso/current_release/term/SO:0000123"),

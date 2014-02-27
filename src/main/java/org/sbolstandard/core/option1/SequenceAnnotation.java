@@ -1,8 +1,10 @@
-package org.sbolstandard.core;
+package org.sbolstandard.core.option1;
 
 import java.net.URI;
 
 import org.apache.commons.lang.ArrayUtils;
+import org.sbolstandard.core.ComponentInstantiation;
+import org.sbolstandard.core.Orientation;
 
 
 public class SequenceAnnotation 
@@ -12,21 +14,21 @@ public class SequenceAnnotation
 	private int end;
 	private Orientation orientation;
 	private SequenceAnnotation precedes;
-	private SequencedComponent instantiates;
+	private SequenceComponent instantiates;
 	
 	/**
 	 * 
 	 * @param identity
 	 * @param displayId
 	 */
-	public SequenceAnnotation(URI identity, String displayId, SequencedComponent instantiates) {
+	public SequenceAnnotation(URI identity, String displayId, SequenceComponent instantiates) {
 		super(identity, displayId);
 		
 		this.instantiates = instantiates;
 	}
 
 	@Override
-	public SequencedComponent getInstantiated() {
+	public SequenceComponent getInstantiated() {
 		return this.instantiates;
 	}
 

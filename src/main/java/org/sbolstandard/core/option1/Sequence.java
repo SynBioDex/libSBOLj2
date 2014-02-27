@@ -1,6 +1,8 @@
-package org.sbolstandard.core;
+package org.sbolstandard.core.option1;
 
 import java.net.URI;
+
+import org.sbolstandard.core.Identified;
 
 /**
  * 
