@@ -1,0 +1,42 @@
+@prefix :  <http://sbols.org/v1#> .
+@prefix so:  <http://purl.org/obo/owl/SO#> .
+{ <http://fakeuri.org/part/doubleprom1_1_3>
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  :SequenceAnnotation ;
+          :bioStart      "1" ;
+          :bioEnd        "3" ;
+          :strand        "+" ;
+          :subComponent  <http://fakeuri.org/part/prom1> .
+  
+  <http://fakeuri.org/part/doubleprom1/NA>
+          :nucleotides  "aaaaaa" ;
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  :DnaSequence .
+  
+  <http://fakeuri.org/part/prom1/NA>
+          :nucleotides  "aaa" ;
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  :DnaSequence .
+  
+  <http://fakeuri.org/part/prom1>
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  :DnaComponent ;
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  so:SO_0000167 ;
+          :displayId    "prom1" ;
+          :name         "Promoter 1" ;
+          :description  "An example promoter" ;
+          :dnaSequence  <http://fakeuri.org/part/prom1/NA> .
+  
+  <http://fakeuri.org/part/doubleprom1>
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  :DnaComponent ;
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  so:SO_0000167 ;
+          :displayId    "doubleprom1" ;
+          :name         "Double Promoter 1" ;
+          :description  "A double promoter example" ;
+          :dnaSequence  <http://fakeuri.org/part/doubleprom1/NA> ;
+          :annotation   <http://fakeuri.org/part/doubleprom1_4_6> ;
+          :annotation   <http://fakeuri.org/part/doubleprom1_1_3> .
+  
+  <http://fakeuri.org/part/doubleprom1_4_6>
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  :SequenceAnnotation ;
+          :bioStart      "4" ;
+          :bioEnd        "6" ;
+          :strand        "+" ;
+          :subComponent  <http://fakeuri.org/part/prom1> .
+}

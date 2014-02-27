@@ -1,0 +1,49 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://sbols.org/v1#"
+    xmlns:so="http://purl.org/obo/owl/SO#">
+   <DnaComponent rdf:about="http://fakeuri.org/part/doubleprom1">
+      <rdf:type rdf:resource="http://purl.org/obo/owl/SO#SO_0000167"/>
+      <displayId>doubleprom1</displayId>
+      <name>Double Promoter 1</name>
+      <description>A double promoter example</description>
+      <dnaSequence>
+         <DnaSequence rdf:about="http://fakeuri.org/part/doubleprom1/NA"/>
+      </dnaSequence>
+      <annotation>
+         <SequenceAnnotation rdf:about="http://fakeuri.org/part/doubleprom1_4_6">
+            <bioStart>4</bioStart>
+            <bioEnd>6</bioEnd>
+            <strand>+</strand>
+            <subComponent>
+               <DnaComponent rdf:about="http://fakeuri.org/part/prom1"/>
+            </subComponent>
+         </SequenceAnnotation>
+      </annotation>
+      <annotation>
+         <SequenceAnnotation rdf:about="http://fakeuri.org/part/doubleprom1_1_3">
+            <bioStart>1</bioStart>
+            <bioEnd>3</bioEnd>
+            <strand>+</strand>
+            <subComponent>
+               <DnaComponent rdf:about="http://fakeuri.org/part/prom1"/>
+            </subComponent>
+         </SequenceAnnotation>
+      </annotation>
+   </DnaComponent>
+   <DnaComponent rdf:about="http://fakeuri.org/part/prom1">
+      <rdf:type rdf:resource="http://purl.org/obo/owl/SO#SO_0000167"/>
+      <displayId>prom1</displayId>
+      <name>Promoter 1</name>
+      <description>An example promoter</description>
+      <dnaSequence>
+         <DnaSequence rdf:about="http://fakeuri.org/part/prom1/NA"/>
+      </dnaSequence>
+   </DnaComponent>
+   <DnaSequence rdf:about="http://fakeuri.org/part/prom1/NA">
+      <nucleotides>aaa</nucleotides>
+   </DnaSequence>
+   <DnaSequence rdf:about="http://fakeuri.org/part/doubleprom1/NA">
+      <nucleotides>aaaaaa</nucleotides>
+   </DnaSequence>
+</rdf:RDF>

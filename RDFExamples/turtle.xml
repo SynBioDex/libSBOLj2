@@ -1,0 +1,40 @@
+@base          <http://sbols.org/v1#> .
+@prefix :      <http://sbols.org/v1#> .
+@prefix so:    <http://purl.org/obo/owl/SO#> .
+
+<http://fakeuri.org/part/doubleprom1_1_3>
+        a              :SequenceAnnotation ;
+        :bioEnd        "3" ;
+        :bioStart      "1" ;
+        :strand        "+" ;
+        :subComponent  <http://fakeuri.org/part/prom1> .
+
+<http://fakeuri.org/part/doubleprom1/NA>
+        a             :DnaSequence ;
+        :nucleotides  "aaaaaa" .
+
+<http://fakeuri.org/part/prom1/NA>
+        a             :DnaSequence ;
+        :nucleotides  "aaa" .
+
+<http://fakeuri.org/part/prom1>
+        a             :DnaComponent , so:SO_0000167 ;
+        :description  "An example promoter" ;
+        :displayId    "prom1" ;
+        :dnaSequence  <http://fakeuri.org/part/prom1/NA> ;
+        :name         "Promoter 1" .
+
+<http://fakeuri.org/part/doubleprom1>
+        a             :DnaComponent , so:SO_0000167 ;
+        :annotation   <http://fakeuri.org/part/doubleprom1_4_6> , <http://fakeuri.org/part/doubleprom1_1_3> ;
+        :description  "A double promoter example" ;
+        :displayId    "doubleprom1" ;
+        :dnaSequence  <http://fakeuri.org/part/doubleprom1/NA> ;
+        :name         "Double Promoter 1" .
+
+<http://fakeuri.org/part/doubleprom1_4_6>
+        a              :SequenceAnnotation ;
+        :bioEnd        "6" ;
+        :bioStart      "4" ;
+        :strand        "+" ;
+        :subComponent  <http://fakeuri.org/part/prom1> .
