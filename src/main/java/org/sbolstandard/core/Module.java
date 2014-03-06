@@ -4,6 +4,7 @@
 package org.sbolstandard.core;
 
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.sbolstandard.core.context.Context;
@@ -97,7 +98,7 @@ public class Module
 	public void setPorts(Collection<Port> ports) {
 		this.ports = ports;
 	}
-
+	
 	/**
 	 * @return the interactions
 	 */
