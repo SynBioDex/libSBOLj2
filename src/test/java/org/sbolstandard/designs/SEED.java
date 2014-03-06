@@ -312,10 +312,10 @@ public class SEED {
 
 		// port maps
 		// PortMap(URI identity, Port port, ComponentInstantiation mapping)
-//		PortMap pm1 = new PortMap(
-//				URI.create(URI_PREFIX+"UU_001M/portMapSig/portmap1"),
-//				null,
-//				null);
+		PortMap pm1 = new PortMap(
+				URI.create(URI_PREFIX+"UU_001M/portMapSig/portmap1"),
+				null,
+				null);
 		
 		// how can I get the port now?
 		// first, we need to get the composite sequence component
