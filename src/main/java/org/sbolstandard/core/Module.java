@@ -4,6 +4,7 @@
 package org.sbolstandard.core;
 
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 
@@ -105,7 +106,7 @@ public class Module
 	public void setPorts(Collection<Port> ports) {
 		this.ports = ports;
 	}
-
+	
 	/**
 	 * @return the interactions
 	 */
