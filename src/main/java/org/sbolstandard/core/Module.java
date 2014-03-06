@@ -5,6 +5,7 @@ package org.sbolstandard.core;
 
 import java.net.URI;
 import java.util.Collection;
+import java.util.HashSet;
 
 import org.sbolstandard.core.context.Context;
 import org.sbolstandard.core.interaction.Interaction;
@@ -26,6 +27,13 @@ public class Module
 	
 	public Module(URI identity, String displayId) {
 		super(identity, displayId);
+		
+		this.signals = new HashSet<Signal>();
+		this.subModules = new HashSet<ModuleInstantiation>();
+		this.contexts = new HashSet<Context>();
+		this.models = new HashSet<Model>();
+		this.ports = new HashSet<Port>();
+		this.interactions = new HashSet<Interaction>();		
 	}
 
 	/**

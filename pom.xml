@@ -15,20 +15,37 @@
       </plugin>
     </plugins>
   </build>
-  <dependencies>
-	<dependency>
-		<groupId>org.apache.jena</groupId>
-		<artifactId>apache-jena-libs</artifactId>
-		<type>pom</type>
-		<version>2.11.1</version>
-	</dependency>
-
-	<!-- neat Appache library to work easier with
-	     primitive arrays -->	
-	<dependency>
-		<groupId>commons-lang</groupId>
-		<artifactId>commons-lang</artifactId>
-		<version>2.6</version>
-	</dependency>
-  </dependencies>
+  
+	<repositories>
+		<repository>
+			<id>biojava-maven-repo</id>
+			<name>BioJava repository</name>
+			<url>http://www.biojava.org/download/maven/</url>			
+		</repository>
+	</repositories>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>apache-jena-libs</artifactId>
+			<type>pom</type>
+			<version>2.11.1</version>
+		</dependency>
+	
+		<!-- neat Appache library to work easier with
+		     primitive arrays -->	
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+		
+		<!--  BioJava -->
+		<dependency>
+	        <groupId>org.biojava</groupId>
+	        <artifactId>biojava3-core</artifactId>
+	        <version>3.0.6</version>
+        </dependency>                
+	</dependencies>
+	
 </project>

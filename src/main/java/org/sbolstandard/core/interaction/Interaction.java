@@ -4,7 +4,6 @@ import java.net.URI;
 import java.util.Collection;
 
 import org.sbolstandard.core.Documented;
-import org.sbolstandard.core.Signal;
 
 /**
  * 

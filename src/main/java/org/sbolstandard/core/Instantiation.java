@@ -1,6 +1,7 @@
 package org.sbolstandard.core;
 
 import java.net.URI;
+import java.util.Collection;
 
 /**
  * 
@@ -9,13 +10,13 @@ import java.net.URI;
 public abstract class Instantiation 
 	extends Documented {
 
-	private PortMap[] portMaps;
+	private Collection<PortMap> portMaps;
 	
 	public Instantiation(URI identity, String displayId) {
 		super(identity, displayId);
 	}
 
-	public PortMap[] getPortMaps() {
+	public Collection<PortMap> getPortMaps() {
 		return portMaps;
 	}
 	

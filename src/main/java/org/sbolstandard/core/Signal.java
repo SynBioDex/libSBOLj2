@@ -16,11 +16,12 @@ public class Signal
 	public Signal(URI identity, String displayId, Component instantiates) {
 		super(identity, displayId);
 		this.instantiates = instantiates;
+		
 	}
 
 	@Override
 	public Component getInstantiated() {
 		return this.instantiates;
 	}
-
+	
 }

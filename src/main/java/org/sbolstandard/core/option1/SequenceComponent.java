@@ -2,6 +2,7 @@ package org.sbolstandard.core.option1;
 
 import java.net.URI;
 import java.util.Collection;
+import java.util.HashSet;
 
 import org.sbolstandard.core.Component;
 import org.sbolstandard.core.Port;
@@ -19,10 +20,19 @@ public class SequenceComponent
 	protected Collection<SequenceAnnotation> sequenceAnnotations;
 	private Collection<Port> ports;
 	
+	/**
+	 * 
+	 * @param identity
+	 * @param displayId
+	 * @param type
+	 * @param sequenceType
+	 */
 	public SequenceComponent(URI identity, String displayId, URI type, URI sequenceType) {
 		super(identity, displayId, type);
 		
 		this.sequenceType = sequenceType;
+		this.sequenceAnnotations = new HashSet<SequenceAnnotation>();
+		this.ports = new HashSet<Port>();
 	}
 
 	public URI getSequenceType() {
