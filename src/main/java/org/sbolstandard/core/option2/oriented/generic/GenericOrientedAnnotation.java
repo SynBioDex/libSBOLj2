@@ -28,26 +28,37 @@ public class GenericOrientedAnnotation
 	 * 
 	 */
 	@Override
-	public GenericOrientedComponent getInstantiated() {
+	public GenericOrientedComponent getInstantiates() {
 		return this.instantiates;
 	}
 	
 	/**
 	 * 
-	 * @return
+	 * @return the collection of preceding generic oriented annotations
 	 */
-	public Collection<GenericOrientedAnnotation> getPreceded() {
-		/*
-		 * iterate (recursively) over all predecessors and build the array
-		 * here, we utilize the Apache Commons Lang library... 
-		 */
-		Collection<GenericOrientedAnnotation> annos = new LinkedList<GenericOrientedAnnotation>();
-		if(null != this.precedes && !this.precedes.isEmpty()) {
-			for(GenericOrientedAnnotation da : this.precedes) {
-				annos.addAll(da.getPreceded());
-			}
-		}
-		return annos;
+	public Collection<GenericOrientedAnnotation> getPrecedes() {
+		// for the time being, we only return the collection of 
+		// preceding generic oriented annotations
+		return this.precedes;
+//		/*
+//		 * iterate (recursively) over all predecessors and build the array
+//		 * here, we utilize the Apache Commons Lang library... 
+//		 */
+//		Collection<GenericOrientedAnnotation> annos = new LinkedList<GenericOrientedAnnotation>();
+//		if(null != this.precedes && !this.precedes.isEmpty()) {
+//			for(GenericOrientedAnnotation da : this.precedes) {
+//				annos.addAll(da.getPrecedes());
+//			}
+//		}
+//		return annos;
+	}
+	
+	/**
+	 * 
+	 * @param precedes is a collection of generic oriented annotations 
+	 */
+	public void setPrecedes(Collection<GenericOrientedAnnotation> precedes) {
+		this.precedes = precedes;
 	}
 
 }

@@ -13,7 +13,4 @@ public abstract class ComponentInstantiation
 		super(identity, displayId);
 	}
 
-	// abstract methods
-	public abstract Component getInstantiated();
-
 }

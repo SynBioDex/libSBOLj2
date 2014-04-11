@@ -28,26 +28,37 @@ public class RnaAnnotation
 	 * 
 	 */
 	@Override
-	public RnaComponent getInstantiated() {
+	public RnaComponent getInstantiates() {
 		return this.instantiates;
 	}
 	
 	/**
 	 * 
-	 * @return
+	 * @return the collection of preceding RNA annotations
 	 */
-	public Collection<RnaAnnotation> getPreceded() {
-		/*
-		 * iterate (recursively) over all predecessors and build the array
-		 * here, we utilize the Apache Commons Lang library... 
-		 */
-		Collection<RnaAnnotation> annos = new LinkedList<RnaAnnotation>();
-		if(null != this.precedes && !this.precedes.isEmpty()) {
-			for(RnaAnnotation da : this.precedes) {
-				annos.addAll(da.getPreceded());
-			}
-		}
-		return annos;
+	public Collection<RnaAnnotation> getPrecedes() {
+		// for the time being, we only return the collection
+		// of RNA annotations
+		return this.precedes;
+//		/*
+//		 * iterate (recursively) over all predecessors and build the array
+//		 * here, we utilize the Apache Commons Lang library... 
+//		 */
+//		Collection<RnaAnnotation> annos = new LinkedList<RnaAnnotation>();
+//		if(null != this.precedes && !this.precedes.isEmpty()) {
+//			for(RnaAnnotation da : this.precedes) {
+//				annos.addAll(da.getPrecedes());
+//			}
+//		}
+//		return annos;
+	}
+	
+	/**
+	 * 
+	 * @param precedes is a collection of preceding RNA annotations
+	 */
+	public void setPrecedes(Collection<RnaAnnotation> precedes) {
+		this.precedes = precedes;
 	}
 
 }

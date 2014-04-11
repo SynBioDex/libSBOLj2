@@ -17,7 +17,7 @@ public class ModuleInstantiation
 	}
 
 	@Override
-	public Module getInstantiated() {
+	public Module getInstantiates() {
 		return instantiates;
 	}
 
