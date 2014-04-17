@@ -4,7 +4,7 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.sbolstandard.core.option2.oriented.OrientedComponent;
+import org.sbolstandard.core.option2.SequenceComponent;
 
 /**
  * 
@@ -12,7 +12,7 @@ import org.sbolstandard.core.option2.oriented.OrientedComponent;
  *
  */
 public class ProteinComponent 
-	extends OrientedComponent<ProteinAnnotation,ProteinSequence> {
+	extends SequenceComponent<ProteinAnnotation,ProteinSequence> {
 
 	private Collection<ProteinAnnotation> annotations;
 	private ProteinSequence sequence;
@@ -30,6 +30,10 @@ public class ProteinComponent
 
 	@Override
 	public ProteinSequence getSequence() {
+		return this.sequence;
+	}
+	
+	public ProteinSequence setSequence(ProteinSequence sequence) {
 		return this.sequence;
 	}
 

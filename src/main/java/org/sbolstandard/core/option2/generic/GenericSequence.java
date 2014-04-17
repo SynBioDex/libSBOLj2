@@ -8,7 +8,7 @@ import org.sbolstandard.core.option2.Sequence;
  * 
  * @author Ernst Oberortner
  */
-public abstract class GenericSequence 
+public class GenericSequence 
 		extends Sequence {
 
 	/**

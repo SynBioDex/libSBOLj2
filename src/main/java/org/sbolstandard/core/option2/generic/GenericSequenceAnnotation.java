@@ -6,14 +6,19 @@ import java.util.HashSet;
 
 import org.sbolstandard.core.option2.SequenceAnnotation;
 
-public abstract class GenericSequenceAnnotation 
-		extends SequenceAnnotation {
+public class GenericSequenceAnnotation 
+		extends SequenceAnnotation<GenericSequenceAnnotation> {
 
+	private GenericSequenceComponent instantiates;
 	private Collection<GenericSequenceAnnotation> precedes;
 
-	public GenericSequenceAnnotation(URI identity, String displayId) {
+	public GenericSequenceAnnotation(URI identity, String displayId, 
+			GenericSequenceComponent instantiates) {
+		
 		super(identity, displayId);
+		
 		this.precedes = new HashSet<GenericSequenceAnnotation>();
+		this.instantiates = instantiates;
 	}
 
 	/**
@@ -42,6 +47,11 @@ public abstract class GenericSequenceAnnotation
 	 */
 	public void setPrecedes(Collection<GenericSequenceAnnotation> precedes) {
 		this.precedes = precedes;
+	}
+
+	@Override
+	public GenericSequenceComponent getInstantiates() {
+		return this.instantiates;
 	}
 
 }

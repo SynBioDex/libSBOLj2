@@ -2,14 +2,14 @@ package org.sbolstandard.core.option2.protein;
 
 import java.net.URI;
 
-import org.sbolstandard.core.option2.oriented.OrientedSequence;
+import org.sbolstandard.core.option2.Sequence;
 
 /**
  * 
  * @author Ernst Oberortner
  */
 public class ProteinSequence 
-		extends OrientedSequence {
+		extends Sequence {
 
 	/**
 	 * 

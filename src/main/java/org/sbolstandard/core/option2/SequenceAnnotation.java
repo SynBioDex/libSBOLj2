@@ -1,10 +1,25 @@
 package org.sbolstandard.core.option2;
 
 import java.net.URI;
+import java.util.Collection;
 
 import org.sbolstandard.core.ComponentInstantiation;
 
-public abstract class SequenceAnnotation 
+/**
+ * 
+ * @author Ernst Oberortner
+ *
+ * @param <SA>
+ * how can we do tell that SA must extend SequenceAnnotation?
+ * 
+ * using "SA extends SequenceAnnotation" is recursive ...
+ * 
+ * removing <SA> causes to remove the getPrecedes() method ...
+ * 
+ * any suggestions?
+ */
+
+public abstract class SequenceAnnotation<SA> 
 		extends ComponentInstantiation {
 
 	private int start;
@@ -53,4 +68,9 @@ public abstract class SequenceAnnotation
 		this.end = end;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
+	public abstract Collection<SA> getPrecedes();
 }
