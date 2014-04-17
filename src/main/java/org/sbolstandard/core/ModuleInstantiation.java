@@ -1,6 +1,7 @@
 package org.sbolstandard.core;
 
 import java.net.URI;
+import java.util.Collection;
 
 /**
  * 
@@ -19,6 +20,15 @@ public class ModuleInstantiation
 	@Override
 	public Module getInstantiates() {
 		return instantiates;
+	}
+	
+	private Collection<PortMap> portMaps;
+	
+	/**
+	 * @param portMaps the portMaps to set
+	 */
+	public void setPortMaps(Collection<PortMap> portMaps) {
+		this.portMaps = portMaps;
 	}
 
 
