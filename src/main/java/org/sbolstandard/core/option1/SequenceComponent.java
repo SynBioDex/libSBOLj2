@@ -35,14 +35,26 @@ public class SequenceComponent
 		this.ports = new HashSet<Port>();
 	}
 
+	/**
+	 * 
+	 * @return the URI of the sequence's type
+	 */
 	public URI getSequenceType() {
 		return sequenceType;
 	}
 
+	/**
+	 * 
+	 * @return the sequence
+	 */
 	public Sequence getSequence() {
 		return sequence;
 	}
 
+	/**
+	 * 
+	 * @param sequence the sequence
+	 */
 	public void setSequence(Sequence sequence) {
 		this.sequence = sequence;
 	}
@@ -55,11 +67,27 @@ public class SequenceComponent
 	public Collection<SequenceAnnotation> getSequenceAnnotations() {
 		return this.sequenceAnnotations;
 	}
+	
+	/**
+	 * 
+	 * @param sequenceAnnotations a Collection of sequence annotations
+	 */
+	public void setSequenceAnnotations(Collection<SequenceAnnotation> sequenceAnnotations) {
+		this.sequenceAnnotations = sequenceAnnotations;
+	}
 
+	/**
+	 * 
+	 * @return  a collection of the sequence's ports
+	 */
 	public Collection<Port> getPorts() {
 		return ports;
 	}
-
+	
+	/**
+	 * 
+	 * @param ports the sequence's ports
+	 */
 	public void setPorts(Collection<Port> ports) {
 		this.ports = ports;
 	}

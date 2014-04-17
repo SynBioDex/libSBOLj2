@@ -20,7 +20,11 @@ public abstract class Instantiation
 		return portMaps;
 	}
 	
+	public void setPortMaps(Collection<PortMap> portMaps) {
+		this.portMaps = portMaps;
+	}
+	
 	// abstract methods
-	public abstract Documented getInstantiated();
+	public abstract Documented getInstantiates();
 
 }

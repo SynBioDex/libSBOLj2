@@ -28,26 +28,37 @@ public class DnaAnnotation
 	 * 
 	 */
 	@Override
-	public DnaComponent getInstantiated() {
+	public DnaComponent getInstantiates() {
 		return this.instantiates;
 	}
 	
 	/**
 	 * 
-	 * @return
+	 * @return the collection of preceding DNA annotations
 	 */
-	public Collection<DnaAnnotation> getPreceded() {
-		/*
-		 * iterate (recursively) over all predecessors and build the array
-		 * here, we utilize the Apache Commons Lang library... 
-		 */
-		Collection<DnaAnnotation> annos = new LinkedList<DnaAnnotation>();
-		if(null != this.precedes && !this.precedes.isEmpty()) {
-			for(DnaAnnotation da : this.precedes) {
-				annos.addAll(da.getPreceded());
-			}
-		}
-		return annos;
+	public Collection<DnaAnnotation> getPrecedes() {
+		// for the time being, we only return the collection of 
+		// preceding DNA annotations
+		return this.precedes;
+//		/*
+//		 * iterate (recursively) over all predecessors and build the array
+//		 * here, we utilize the Apache Commons Lang library... 
+//		 */
+//		Collection<DnaAnnotation> annos = new LinkedList<DnaAnnotation>();
+//		if(null != this.precedes && !this.precedes.isEmpty()) {
+//			for(DnaAnnotation da : this.precedes) {
+//				annos.addAll(da.getPrecedes());
+//			}
+//		}
+//		return annos;
+	}
+	
+	/**
+	 * 
+	 * @param precedes is a collection of preceding DNA annotations
+	 */
+	public void setPrecedes(Collection<DnaAnnotation> precedes) {
+		this.precedes = precedes;
 	}
 
 }

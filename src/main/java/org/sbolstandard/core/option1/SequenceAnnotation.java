@@ -1,6 +1,8 @@
 package org.sbolstandard.core.option1;
 
 import java.net.URI;
+import java.util.Collection;
+import java.util.HashSet;
 
 import org.apache.commons.lang.ArrayUtils;
 import org.sbolstandard.core.ComponentInstantiation;
@@ -13,7 +15,7 @@ public class SequenceAnnotation
 	private int start;
 	private int end;
 	private Orientation orientation;
-	private SequenceAnnotation precedes;
+	private Collection<SequenceAnnotation> precedes;
 	private SequenceComponent instantiates;
 	
 	/**
@@ -25,10 +27,11 @@ public class SequenceAnnotation
 		super(identity, displayId);
 		
 		this.instantiates = instantiates;
+		this.precedes = new HashSet<SequenceAnnotation>();
 	}
 
 	@Override
-	public SequenceComponent getInstantiated() {
+	public SequenceComponent getInstantiates() {
 		return this.instantiates;
 	}
 
@@ -88,29 +91,32 @@ public class SequenceAnnotation
 	 * 
 	 * @return a list of all predecessors of this sequence annotation
 	 */
-	public SequenceAnnotation[] getPreceded() {
-		/*
-		 * iterate (recursively) over all predecessors and build the array
-		 * here, we utilize the Apache Commons Lang library... 
-		 */
-		SequenceAnnotation[] sa = null;
-		if(null != this.precedes) {
-			sa = (SequenceAnnotation[])ArrayUtils.add(
-					this.precedes.getPreceded(), 
-					this.precedes);
-		} else {
-			sa = new SequenceAnnotation[1];
-			sa[0] = this.precedes;
-			return sa;
-		}
-		return sa;
+	public Collection<SequenceAnnotation> getPrecedes() {
+		
+		return this.precedes;
+		
+//		/*
+//		 * iterate (recursively) over all predecessors and build the array
+//		 * here, we utilize the Apache Commons Lang library... 
+//		 */
+//		SequenceAnnotation[] sa = null;
+//		if(null != this.precedes) {
+//			sa = (SequenceAnnotation[])ArrayUtils.add(
+//					this.precedes.getPrecedes(), 
+//					this.precedes);
+//		} else {
+//			sa = new SequenceAnnotation[1];
+//			sa[0] = this.precedes;
+//			return sa;
+//		}
+//		return sa;
 	}
 
 	/**
 	 * setPrecedes
 	 * 
 	 */
-	public void setPrecedes(SequenceAnnotation precedes) {
+	public void setPrecedes(Collection<SequenceAnnotation> precedes) {
 		this.precedes = precedes;
 	}
 	

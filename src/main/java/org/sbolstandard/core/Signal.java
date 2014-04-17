@@ -20,7 +20,7 @@ public class Signal
 	}
 
 	@Override
-	public Component getInstantiated() {
+	public Component getInstantiates() {
 		return this.instantiates;
 	}
 	
