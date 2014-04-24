@@ -34,7 +34,7 @@ public class DnaAnnotation
 	
 	/**
 	 * 
-	 * @return the collection of preceding DNA annotations
+	 * @return a collection of dna annotations preceded by this
 	 */
 	public Collection<DnaAnnotation> getPrecedes() {
 		return this.precedes;
@@ -42,7 +42,7 @@ public class DnaAnnotation
 	
 	/**
 	 * 
-	 * @param precedes is a collection of preceding DNA annotations
+	 * @param precedes a collection of dna annotations preceded by this
 	 */
 	public void setPrecedes(Collection<DnaAnnotation> precedes) {
 		this.precedes = precedes;

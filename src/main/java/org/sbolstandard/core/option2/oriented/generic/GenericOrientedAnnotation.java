@@ -34,7 +34,7 @@ public class GenericOrientedAnnotation
 	
 	/**
 	 * 
-	 * @return the collection of preceding generic oriented annotations
+	 * @return a collection of generic oriented annotations preceded by this
 	 */
 	public Collection<GenericOrientedAnnotation> getPrecedes() {
 		return this.precedes;
@@ -42,7 +42,7 @@ public class GenericOrientedAnnotation
 	
 	/**
 	 * 
-	 * @param precedes is a collection of generic oriented annotations 
+	 * @param precedes a collection of generic oriented annotations preceded by this
 	 */
 	public void setPrecedes(Collection<GenericOrientedAnnotation> precedes) {
 		this.precedes = precedes;

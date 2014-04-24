@@ -34,7 +34,7 @@ public class RnaAnnotation
 	
 	/**
 	 * 
-	 * @return the collection of preceding RNA annotations
+	 * @return a collection of rna annotations preceded by this
 	 */
 	public Collection<RnaAnnotation> getPrecedes() {
 		return this.precedes;
@@ -42,7 +42,7 @@ public class RnaAnnotation
 	
 	/**
 	 * 
-	 * @param precedes is a collection of preceding RNA annotations
+	 * @param precedes a collection of rna annotations preceded by this
 	 */
 	public void setPrecedes(Collection<RnaAnnotation> precedes) {
 		this.precedes = precedes;
