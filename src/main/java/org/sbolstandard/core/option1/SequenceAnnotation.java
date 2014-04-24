@@ -4,7 +4,6 @@ import java.net.URI;
 import java.util.Collection;
 import java.util.HashSet;
 
-import org.apache.commons.lang.ArrayUtils;
 import org.sbolstandard.core.ComponentInstantiation;
 import org.sbolstandard.core.Orientation;
 
@@ -92,24 +91,7 @@ public class SequenceAnnotation
 	 * @return a list of all predecessors of this sequence annotation
 	 */
 	public Collection<SequenceAnnotation> getPrecedes() {
-		
 		return this.precedes;
-		
-//		/*
-//		 * iterate (recursively) over all predecessors and build the array
-//		 * here, we utilize the Apache Commons Lang library... 
-//		 */
-//		SequenceAnnotation[] sa = null;
-//		if(null != this.precedes) {
-//			sa = (SequenceAnnotation[])ArrayUtils.add(
-//					this.precedes.getPrecedes(), 
-//					this.precedes);
-//		} else {
-//			sa = new SequenceAnnotation[1];
-//			sa[0] = this.precedes;
-//			return sa;
-//		}
-//		return sa;
 	}
 
 	/**

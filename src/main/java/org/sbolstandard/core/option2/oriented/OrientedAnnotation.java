@@ -2,6 +2,8 @@ package org.sbolstandard.core.option2.oriented;
 
 import java.net.URI;
 
+import main.java.org.sbolstandard.core.option2.SequenceComponent;
+
 import org.sbolstandard.core.Orientation;
 import org.sbolstandard.core.option2.SequenceAnnotation;
 
@@ -15,6 +17,9 @@ public abstract class OrientedAnnotation
 		super(identity, displayId);
 		this.orientation = orientation;
 	}
+	
+	@Override
+	public abstract OrientedComponent getInstantiates();
 
 	/**
 	 * 

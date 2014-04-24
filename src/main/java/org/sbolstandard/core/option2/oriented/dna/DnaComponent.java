@@ -1,8 +1,8 @@
 package org.sbolstandard.core.option2.oriented.dna;
 
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.ArrayList;
 
 import org.sbolstandard.core.option2.oriented.OrientedComponent;
 
@@ -11,26 +11,35 @@ import org.sbolstandard.core.option2.oriented.OrientedComponent;
  * @author Ernst Oberortner
  *
  */
-public class DnaComponent 
-	extends OrientedComponent<DnaAnnotation, DnaSequence> {
+public class DnaComponent extends OrientedComponent<DnaAnnotation> {
 
-	private Collection<DnaAnnotation> annotations;
+	private Collection<DnaAnnotation> sequenceAnnotations;
 	private DnaSequence sequence;
 	
-	public DnaComponent(URI identity, String displayId, URI type, URI sequenceType) {
-		super(identity, displayId, type, sequenceType);
+	public DnaComponent(URI identity, String displayId, URI type) {
+		super(identity, displayId, type);
 
-		this.annotations = new ArrayList<DnaAnnotation>();
+		this.sequenceAnnotations = new ArrayList<DnaAnnotation>();
 	}
 
 	@Override
 	public Collection<DnaAnnotation> getSequenceAnnotations() {
-		return this.annotations;
+		return this.sequenceAnnotations;
+	}
+	
+	@Override
+	public void setSequenceAnnotations(Collection<DnaAnnotation> sequenceAnnotations) {
+		this.sequenceAnnotations = sequenceAnnotations;
 	}
 
 	@Override
 	public DnaSequence getSequence() {
 		return this.sequence;
+	}
+	
+	@Override
+	public void setSequence(DnaSequence sequence) {
+		this.sequence = sequence;
 	}
 
 }

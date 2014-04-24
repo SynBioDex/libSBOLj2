@@ -1,8 +1,8 @@
 package org.sbolstandard.core.option2.protein;
 
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.ArrayList;
 
 import org.sbolstandard.core.option2.SequenceComponent;
 
@@ -11,21 +11,25 @@ import org.sbolstandard.core.option2.SequenceComponent;
  * @author Ernst Oberortner
  *
  */
-public class ProteinComponent 
-	extends SequenceComponent<ProteinAnnotation,ProteinSequence> {
+public class ProteinComponent extends SequenceComponent<ProteinAnnotation> {
 
-	private Collection<ProteinAnnotation> annotations;
+	private Collection<ProteinAnnotation> sequenceAnnotations;
 	private ProteinSequence sequence;
 	
-	public ProteinComponent(URI identity, String displayId, URI type, URI sequenceType) {
-		super(identity, displayId, type, sequenceType);
+	public ProteinComponent(URI identity, String displayId, URI type) {
+		super(identity, displayId, type);
 
-		this.annotations = new ArrayList<ProteinAnnotation>();
+		this.sequenceAnnotations = new ArrayList<ProteinAnnotation>();
 	}
 
 	@Override
 	public Collection<ProteinAnnotation> getSequenceAnnotations() {
-		return this.annotations;
+		return this.sequenceAnnotations;
+	}
+	
+	@Override
+	public void setSequenceAnnotations(Collection<ProteinAnnotation> sequenceAnnotations) {
+		this.sequenceAnnotations = sequenceAnnotations;
 	}
 
 	@Override
@@ -33,8 +37,9 @@ public class ProteinComponent
 		return this.sequence;
 	}
 	
-	public ProteinSequence setSequence(ProteinSequence sequence) {
-		return this.sequence;
+	@Override
+	public void setSequence(ProteinSequence sequence) {
+		this.sequence = sequence;
 	}
 
 }

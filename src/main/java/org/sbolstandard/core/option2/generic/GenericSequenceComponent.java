@@ -2,35 +2,40 @@ package org.sbolstandard.core.option2.generic;
 
 import java.net.URI;
 import java.util.Collection;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 import org.sbolstandard.core.option2.SequenceComponent;
 
-public class GenericSequenceComponent 
-	extends SequenceComponent<GenericSequenceAnnotation, GenericSequence> {
+public class GenericSequenceComponent extends SequenceComponent<GenericSequenceAnnotation> {
 
-	private GenericSequence genericSequence;
+	private GenericSequence sequence;
 	private Collection<GenericSequenceAnnotation> sequenceAnnotations;
 	
 	public GenericSequenceComponent(URI identity, String displayId, 
-			URI type, URI sequenceType) {
-		super(identity, displayId, type, sequenceType);
+			URI type) {
+		super(identity, displayId, type);
 		
-		this.sequenceAnnotations = new HashSet<GenericSequenceAnnotation>();
+		this.sequenceAnnotations = new ArrayList<GenericSequenceAnnotation>();
 	}
 
 	@Override
 	public Collection<GenericSequenceAnnotation> getSequenceAnnotations() {
 		return this.sequenceAnnotations;
 	}
+	
+	@Override
+	public void setSequenceAnnotations(Collection<GenericSequenceAnnotation> sequenceAnnotations) {
+		this.sequenceAnnotations = sequenceAnnotations;
+	}
 
 	@Override
 	public GenericSequence getSequence() {
-		return this.genericSequence;
+		return this.sequence;
 	}
 	
-	public void setSequence(GenericSequence genericSequence) {
-		this.genericSequence = genericSequence;
+	@Override
+	public void setSequence(GenericSequence sequence) {
+		this.sequence = sequence;
 	}
 	
 

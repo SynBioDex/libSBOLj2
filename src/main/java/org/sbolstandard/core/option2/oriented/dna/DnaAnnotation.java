@@ -2,7 +2,7 @@ package org.sbolstandard.core.option2.oriented.dna;
 
 import java.net.URI;
 import java.util.Collection;
-import java.util.LinkedList;
+import java.util.HashSet;
 
 import org.sbolstandard.core.Orientation;
 import org.sbolstandard.core.option2.oriented.OrientedAnnotation;
@@ -21,7 +21,7 @@ public class DnaAnnotation
 		super(identity, displayId, orientation);
 
 		this.instantiates = instantiates;
-		this.precedes = new LinkedList<DnaAnnotation>();
+		this.precedes = new HashSet<DnaAnnotation>();
 	}
 
 	/**
@@ -37,20 +37,7 @@ public class DnaAnnotation
 	 * @return the collection of preceding DNA annotations
 	 */
 	public Collection<DnaAnnotation> getPrecedes() {
-		// for the time being, we only return the collection of 
-		// preceding DNA annotations
 		return this.precedes;
-//		/*
-//		 * iterate (recursively) over all predecessors and build the array
-//		 * here, we utilize the Apache Commons Lang library... 
-//		 */
-//		Collection<DnaAnnotation> annos = new LinkedList<DnaAnnotation>();
-//		if(null != this.precedes && !this.precedes.isEmpty()) {
-//			for(DnaAnnotation da : this.precedes) {
-//				annos.addAll(da.getPrecedes());
-//			}
-//		}
-//		return annos;
 	}
 	
 	/**

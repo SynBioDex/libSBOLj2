@@ -6,17 +6,18 @@ import java.util.Collection;
 import org.sbolstandard.core.option2.Sequence;
 import org.sbolstandard.core.option2.SequenceComponent;
 
-public abstract class OrientedComponent<OA extends OrientedAnnotation, SEQ extends Sequence> 
-	extends SequenceComponent<OA, SEQ> {
+public abstract class OrientedComponent<OA extends OrientedAnnotation> extends SequenceComponent<OA> {
 
-	public OrientedComponent(URI identity, String displayId, 
-			URI type, URI sequenceType) {
-		super(identity, displayId, type, sequenceType);
+	public OrientedComponent(URI identity, String displayId, URI type) {
+		super(identity, displayId, type);
 	}
 	
 	// abstract methods
+	@Override
 	public abstract Collection<OA> getSequenceAnnotations();
-	public abstract SEQ getSequence();
+	
+	@Override
+	public abstract void setSequenceAnnotations(Collection<OA> sequenceAnnotations);
 	
 
 }
