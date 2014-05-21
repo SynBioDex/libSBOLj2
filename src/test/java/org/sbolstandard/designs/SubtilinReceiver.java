@@ -1,20 +1,20 @@
-package org.sbolstandard.designs;
+package src.test.java.org.sbolstandard.designs;
 
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.sbolstandard.core.GenericComponent;
-import org.sbolstandard.core.Module;
-import org.sbolstandard.core.ModuleInstantiation;
-import org.sbolstandard.core.Port;
-import org.sbolstandard.core.PortMap;
-import org.sbolstandard.core.Signal;
-import org.sbolstandard.core.interaction.Interaction;
-import org.sbolstandard.core.interaction.Participation;
-import org.sbolstandard.core.option2.oriented.dna.DnaComponent;
-import org.sbolstandard.core.option2.protein.ProteinComponent;
+import src.main.java.org.sbolstandard.core.GenericComponent;
+import src.main.java.org.sbolstandard.core.Module;
+import src.main.java.org.sbolstandard.core.ModuleInstantiation;
+import src.main.java.org.sbolstandard.core.Port;
+import src.main.java.org.sbolstandard.core.PortMap;
+import src.main.java.org.sbolstandard.core.Signal;
+import src.main.java.org.sbolstandard.core.interaction.Interaction;
+import src.main.java.org.sbolstandard.core.interaction.Participation;
+import src.main.java.org.sbolstandard.core.option2.oriented.dna.DnaComponent;
+import src.main.java.org.sbolstandard.core.option2.protein.ProteinComponent;
 
 public class SubtilinReceiver {
 	ProteinComponent spaKProteinComp = new ProteinComponent(

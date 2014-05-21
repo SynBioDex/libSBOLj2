@@ -1,11 +1,11 @@
-package org.sbolstandard.core.option2.oriented.generic;
+package src.main.java.org.sbolstandard.core.option2.oriented.generic;
 
 import java.net.URI;
 import java.util.Collection;
 import java.util.HashSet;
 
-import org.sbolstandard.core.Orientation;
-import org.sbolstandard.core.option2.oriented.OrientedAnnotation;
+import src.main.java.org.sbolstandard.core.Orientation;
+import src.main.java.org.sbolstandard.core.option2.oriented.OrientedAnnotation;
 
 /**
  * 

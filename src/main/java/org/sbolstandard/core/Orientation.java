@@ -1,4 +1,4 @@
-package org.sbolstandard.core;
+package src.main.java.org.sbolstandard.core;
 
 public enum Orientation {
 	inline, reverseComplement

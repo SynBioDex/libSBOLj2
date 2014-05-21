@@ -1,4 +1,4 @@
-package org.sbolstandard.designs;
+package src.test.java.org.sbolstandard.designs;
 
 import java.net.URI;
 import java.util.Collection;
@@ -7,18 +7,18 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import org.sbolstandard.core.Component;
-import org.sbolstandard.core.ComponentInstantiation;
-import org.sbolstandard.core.GenericComponent;
-import org.sbolstandard.core.Module;
-import org.sbolstandard.core.Port;
-import org.sbolstandard.core.PortMap;
-import org.sbolstandard.core.Signal;
-import org.sbolstandard.core.interaction.Interaction;
-import org.sbolstandard.core.interaction.Participation;
-import org.sbolstandard.core.ontology.SequenceOntology;
-import org.sbolstandard.core.option1.SequenceAnnotation;
-import org.sbolstandard.core.option1.SequenceComponent;
+import src.main.java.org.sbolstandard.core.Component;
+import src.main.java.org.sbolstandard.core.ComponentInstantiation;
+import src.main.java.org.sbolstandard.core.GenericComponent;
+import src.main.java.org.sbolstandard.core.Module;
+import src.main.java.org.sbolstandard.core.Port;
+import src.main.java.org.sbolstandard.core.PortMap;
+import src.main.java.org.sbolstandard.core.Signal;
+import src.main.java.org.sbolstandard.core.interaction.Interaction;
+import src.main.java.org.sbolstandard.core.interaction.Participation;
+import src.main.java.org.sbolstandard.core.ontology.SequenceOntology;
+import src.main.java.org.sbolstandard.core.option1.SequenceAnnotation;
+import src.main.java.org.sbolstandard.core.option1.SequenceComponent;
 
 public class SEED {
 

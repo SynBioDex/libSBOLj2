@@ -1,8 +1,8 @@
-package org.sbolstandard.core.option2.generic;
+package src.main.java.org.sbolstandard.core.option2.generic;
 
 import java.net.URI;
 
-import org.sbolstandard.core.option2.Sequence;
+import src.main.java.org.sbolstandard.core.option2.Sequence;
 
 /**
  * 

@@ -1,4 +1,4 @@
-package org.sbolstandard.core;
+package src.main.java.org.sbolstandard.core;
 
 import java.net.URI;
 

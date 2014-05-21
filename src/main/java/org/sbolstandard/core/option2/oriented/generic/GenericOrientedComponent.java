@@ -1,11 +1,12 @@
-package org.sbolstandard.core.option2.oriented.generic;
+package src.main.java.org.sbolstandard.core.option2.oriented.generic;
 
 import java.net.URI;
 import java.util.Collection;
 import java.util.ArrayList;
 
-import org.sbolstandard.core.option2.generic.GenericSequence;
-import org.sbolstandard.core.option2.oriented.OrientedComponent;
+import src.main.java.org.sbolstandard.core.option2.Sequence;
+import src.main.java.org.sbolstandard.core.option2.generic.GenericSequence;
+import src.main.java.org.sbolstandard.core.option2.oriented.OrientedComponent;
 
 /**
  * 
@@ -38,9 +39,15 @@ public class GenericOrientedComponent extends OrientedComponent<GenericOrientedA
 		return this.sequence;
 	}
 	
-	@Override
-	public void setSequence(GenericSequence sequence) {
+	//@Override
+	public void setGenericSequence(GenericSequence sequence) {
 		this.sequence = sequence;
+	}
+
+	@Override
+	public void setSequence(Sequence sequence) {
+		setGenericSequence((GenericSequence)sequence); 
+		
 	}
 
 }

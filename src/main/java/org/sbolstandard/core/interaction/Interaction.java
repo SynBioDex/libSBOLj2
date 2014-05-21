@@ -1,9 +1,9 @@
-package org.sbolstandard.core.interaction;
+package src.main.java.org.sbolstandard.core.interaction;
 
 import java.net.URI;
 import java.util.Collection;
 
-import org.sbolstandard.core.Documented;
+import src.main.java.org.sbolstandard.core.Documented;
 
 /**
  * 

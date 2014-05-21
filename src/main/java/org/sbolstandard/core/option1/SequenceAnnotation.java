@@ -1,11 +1,11 @@
-package org.sbolstandard.core.option1;
+package src.main.java.org.sbolstandard.core.option1;
 
 import java.net.URI;
 import java.util.Collection;
 import java.util.HashSet;
 
-import org.sbolstandard.core.ComponentInstantiation;
-import org.sbolstandard.core.Orientation;
+import src.main.java.org.sbolstandard.core.ComponentInstantiation;
+import src.main.java.org.sbolstandard.core.Orientation;
 
 
 public class SequenceAnnotation 

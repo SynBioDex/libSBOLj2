@@ -1,10 +1,11 @@
-package org.sbolstandard.core.option2.protein;
+package src.main.java.org.sbolstandard.core.option2.protein;
 
 import java.net.URI;
 import java.util.Collection;
 import java.util.ArrayList;
 
-import org.sbolstandard.core.option2.SequenceComponent;
+import src.main.java.org.sbolstandard.core.option2.Sequence;
+import src.main.java.org.sbolstandard.core.option2.SequenceComponent;
 
 /**
  * 
@@ -20,6 +21,12 @@ public class ProteinComponent extends SequenceComponent<ProteinAnnotation> {
 		super(identity, displayId, type);
 
 		this.sequenceAnnotations = new ArrayList<ProteinAnnotation>();
+	}
+	
+	//TODO SubtilinReceiver.java calls this constructor. Make note that the parameter is incorrect. To 
+	//remove the errors, this temporary structure was set. 
+	public ProteinComponent(URI identity, String displayId, URI type, URI type2) {
+		super(identity, displayId, type);
 	}
 
 	@Override
@@ -37,9 +44,15 @@ public class ProteinComponent extends SequenceComponent<ProteinAnnotation> {
 		return this.sequence;
 	}
 	
-	@Override
-	public void setSequence(ProteinSequence sequence) {
+	//@Override
+	public void setProteinSequence(ProteinSequence sequence) {
 		this.sequence = sequence;
+	}
+
+	@Override
+	public void setSequence(Sequence sequence) {
+		setProteinSequence((ProteinSequence)sequence);
+		
 	}
 
 }
