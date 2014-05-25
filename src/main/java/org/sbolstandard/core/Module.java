@@ -25,8 +25,6 @@ public class Module
 	private Collection<Model> models;
 	private Collection<Port> ports;
 	private Collection<Interaction> interactions;
-	private Collection<PortMap> portMaps;
-	
 	
 	public Module(URI identity, String displayId) {
 		super(identity, displayId);
@@ -108,20 +106,6 @@ public class Module
 	public void setPorts(Collection<Port> ports) {
 		this.ports = ports;
 	}
-	
-	/**
-	 * @return the portMaps
-	 */
-	public Collection<PortMap> getPortMaps() {
-		return portMaps;
-	}
-
-	/**
-	 * @param portMaps the portMaps to set
-	 */
-	/* GM Commented public void setPortMaps(Collection<PortMap> portMaps) {
-		this.portMaps = portMaps;
-	}*/
 	
 	/**
 	 * @return the interactions

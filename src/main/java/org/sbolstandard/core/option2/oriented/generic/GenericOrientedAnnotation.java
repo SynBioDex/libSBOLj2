@@ -2,7 +2,7 @@ package org.sbolstandard.core.option2.oriented.generic;
 
 import java.net.URI;
 import java.util.Collection;
-import java.util.LinkedList;
+import java.util.HashSet;
 
 import org.sbolstandard.core.Orientation;
 import org.sbolstandard.core.option2.oriented.OrientedAnnotation;
@@ -21,7 +21,7 @@ public class GenericOrientedAnnotation
 		super(identity, displayId, orientation);
 
 		this.instantiates = instantiates;
-		this.precedes = new LinkedList<GenericOrientedAnnotation>();
+		this.precedes = new HashSet<GenericOrientedAnnotation>();
 	}
 
 	/**
@@ -34,28 +34,15 @@ public class GenericOrientedAnnotation
 	
 	/**
 	 * 
-	 * @return the collection of preceding generic oriented annotations
+	 * @return a collection of generic oriented annotations preceded by this
 	 */
 	public Collection<GenericOrientedAnnotation> getPrecedes() {
-		// for the time being, we only return the collection of 
-		// preceding generic oriented annotations
 		return this.precedes;
-//		/*
-//		 * iterate (recursively) over all predecessors and build the array
-//		 * here, we utilize the Apache Commons Lang library... 
-//		 */
-//		Collection<GenericOrientedAnnotation> annos = new LinkedList<GenericOrientedAnnotation>();
-//		if(null != this.precedes && !this.precedes.isEmpty()) {
-//			for(GenericOrientedAnnotation da : this.precedes) {
-//				annos.addAll(da.getPrecedes());
-//			}
-//		}
-//		return annos;
 	}
 	
 	/**
 	 * 
-	 * @param precedes is a collection of generic oriented annotations 
+	 * @param precedes a collection of generic oriented annotations preceded by this
 	 */
 	public void setPrecedes(Collection<GenericOrientedAnnotation> precedes) {
 		this.precedes = precedes;

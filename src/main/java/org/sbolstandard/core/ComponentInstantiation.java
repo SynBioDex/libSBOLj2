@@ -12,5 +12,8 @@ public abstract class ComponentInstantiation
 	public ComponentInstantiation(URI identity, String displayId) {
 		super(identity, displayId);
 	}
+	
+	@Override
+	public abstract Component getInstantiates();
 
 }

@@ -2,6 +2,7 @@ package org.sbolstandard.core.option2;
 
 import java.net.URI;
 import java.util.Collection;
+import java.util.HashSet;
 
 import org.sbolstandard.core.Component;
 import org.sbolstandard.core.Port;
@@ -12,27 +13,31 @@ import org.sbolstandard.core.option2.Sequence;
  * 
  * @author Ernst Oberortner
  */
-public abstract class SequenceComponent<SA extends SequenceAnnotation, SEQ extends Sequence>
-		extends Component {
+public abstract class SequenceComponent<SA extends SequenceAnnotation> extends Component {
 
-	// in Option 2:
-	// do we really need a sequence type?
-	private URI sequenceType;
-	
+	private Collection<URI> sequenceTypes;
 	private Collection<Port> ports;
 	
-	public SequenceComponent(URI identity, String displayId, URI type, URI sequenceType) {
+	public SequenceComponent(URI identity, String displayId, URI type) {
 		super(identity, displayId, type);
 		
-		this.sequenceType = sequenceType;
+		this.sequenceTypes = new HashSet<URI>();
 	}
 
 	/**
 	 * 
 	 * @return
 	 */
-	public URI getSequenceType() {
-		return sequenceType;
+	public Collection<URI> getSequenceTypes() {
+		return sequenceTypes;
+	}
+	
+	/**
+	 * 
+	 * @param sequenceTypes a Collection of URIs
+	 */
+	public void setSequenceTypes(Collection<URI> sequenceTypes) {
+		this.sequenceTypes = sequenceTypes;
 	}
 
 	/**
@@ -53,5 +58,7 @@ public abstract class SequenceComponent<SA extends SequenceAnnotation, SEQ exten
 	
 	// abstract methods
 	public abstract Collection<SA> getSequenceAnnotations();
-	public abstract SEQ getSequence();
+	public abstract void setSequenceAnnotations(Collection<SA> sequenceAnnotations);
+	public abstract Sequence getSequence();
+	public abstract void setSequence(Sequence sequence);
 }

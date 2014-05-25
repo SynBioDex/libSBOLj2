@@ -3,6 +3,8 @@ package org.sbolstandard.core.option2;
 import java.net.URI;
 import java.util.Collection;
 
+import main.java.org.sbolstandard.core.Component;
+
 import org.sbolstandard.core.ComponentInstantiation;
 
 /**
@@ -19,8 +21,7 @@ import org.sbolstandard.core.ComponentInstantiation;
  * any suggestions?
  */
 
-public abstract class SequenceAnnotation<SA> 
-		extends ComponentInstantiation {
+public abstract class SequenceAnnotation extends ComponentInstantiation {
 
 	private int start;
 	private int end;
@@ -67,10 +68,7 @@ public abstract class SequenceAnnotation<SA>
 	public void setEnd(int end) {
 		this.end = end;
 	}
-
-	/**
-	 * 
-	 * @return
-	 */
-	public abstract Collection<SA> getPrecedes();
+	
+	@Override
+	public abstract SequenceComponent getInstantiates();
 }

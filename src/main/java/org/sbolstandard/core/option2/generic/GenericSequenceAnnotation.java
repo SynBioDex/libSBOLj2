@@ -6,8 +6,7 @@ import java.util.HashSet;
 
 import org.sbolstandard.core.option2.SequenceAnnotation;
 
-public class GenericSequenceAnnotation 
-		extends SequenceAnnotation<GenericSequenceAnnotation> {
+public class GenericSequenceAnnotation extends SequenceAnnotation {
 
 	private GenericSequenceComponent instantiates;
 	private Collection<GenericSequenceAnnotation> precedes;
@@ -17,41 +16,29 @@ public class GenericSequenceAnnotation
 		
 		super(identity, displayId);
 		
-		this.precedes = new HashSet<GenericSequenceAnnotation>();
 		this.instantiates = instantiates;
+		this.precedes = new HashSet<GenericSequenceAnnotation>();
 	}
-
-	/**
-	 * 
-	 * @return the collection of preceding generic sequence annotations
-	 */
-	public Collection<GenericSequenceAnnotation> getPrecedes() {
-		// for the time being, we only return the collection of
-		// preceding generic sequence annotations
-		return this.precedes;
-//		/*
-//		 * iterate (recursively) over all predecessors and build the array
-//		 * here, we utilize the Apache Commons Lang library... 
-//		 */
-//		Collection<GenericSequenceAnnotation> annos = new LinkedList<GenericSequenceAnnotation>();
-//		if(null != this.precedes && !this.precedes.isEmpty()) {
-//			for(GenericSequenceAnnotation da : this.precedes) {
-//				annos.addAll(da.getPrecedes());
-//			}
-//		}
-//		return annos;
-	}
-	/**
-	 * 
-	 * @param precedes a collection of preceding generic sequence annotations
-	 */
-	public void setPrecedes(Collection<GenericSequenceAnnotation> precedes) {
-		this.precedes = precedes;
-	}
-
+	
 	@Override
 	public GenericSequenceComponent getInstantiates() {
 		return this.instantiates;
+	}
+
+	/**
+	 * 
+	 * @return a collection of generic sequence annotations preceded by this
+	 */
+	public Collection<GenericSequenceAnnotation> getPrecedes() {
+		return this.precedes;
+	}
+	
+	/**
+	 * 
+	 * @param precedes a collection of generic sequence annotations preceded by this
+	 */
+	public void setPrecedes(Collection<GenericSequenceAnnotation> precedes) {
+		this.precedes = precedes;
 	}
 
 }

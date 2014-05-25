@@ -21,15 +21,5 @@ public class ModuleInstantiation
 	public Module getInstantiates() {
 		return instantiates;
 	}
-	
-	private Collection<PortMap> portMaps;
-	
-	/**
-	 * @param portMaps the portMaps to set
-	 */
-	public void setPortMaps(Collection<PortMap> portMaps) {
-		this.portMaps = portMaps;
-	}
-
 
 }

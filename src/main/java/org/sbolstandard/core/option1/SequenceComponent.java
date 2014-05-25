@@ -3,6 +3,7 @@ package org.sbolstandard.core.option1;
 import java.net.URI;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.ArrayList;
 
 import org.sbolstandard.core.Component;
 import org.sbolstandard.core.Port;
@@ -15,7 +16,7 @@ import org.sbolstandard.core.Port;
 public class SequenceComponent
 		extends Component {
 
-	private URI sequenceType;
+	private Collection<URI> sequenceTypes;
 	private Sequence sequence;
 	protected Collection<SequenceAnnotation> sequenceAnnotations;
 	private Collection<Port> ports;
@@ -27,11 +28,11 @@ public class SequenceComponent
 	 * @param type
 	 * @param sequenceType
 	 */
-	public SequenceComponent(URI identity, String displayId, URI type, URI sequenceType) {
+	public SequenceComponent(URI identity, String displayId, URI type) {
 		super(identity, displayId, type);
 		
-		this.sequenceType = sequenceType;
-		this.sequenceAnnotations = new HashSet<SequenceAnnotation>();
+		this.sequenceTypes = new HashSet<URI>();
+		this.sequenceAnnotations = new ArrayList<SequenceAnnotation>();
 		this.ports = new HashSet<Port>();
 	}
 
@@ -39,8 +40,16 @@ public class SequenceComponent
 	 * 
 	 * @return the URI of the sequence's type
 	 */
-	public URI getSequenceType() {
-		return sequenceType;
+	public Collection<URI> getSequenceTypes() {
+		return sequenceTypes;
+	}
+	
+	/**
+	 * 
+	 * @param sequenceTypes a Collection of URIs
+	 */
+	public void setSequenceTypes(Collection<URI> sequenceTypes) {
+		this.sequenceTypes = sequenceTypes;
 	}
 
 	/**
