@@ -1,10 +1,10 @@
-package org.sbolstandard.designs;
+package src.test.java.org.sbolstandard.designs;
 
 import java.net.URI;
 
-import org.sbolstandard.core.Component;
-import org.sbolstandard.core.Module;
-import org.sbolstandard.core.option1.SequenceComponent;
+import src.main.java.org.sbolstandard.core.Component;
+import src.main.java.org.sbolstandard.core.Module;
+import src.main.java.org.sbolstandard.core.option1.SequenceComponent;
 
 public class ToggleSwitch {
 

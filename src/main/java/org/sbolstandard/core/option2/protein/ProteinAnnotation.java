@@ -1,10 +1,10 @@
-package org.sbolstandard.core.option2.protein;
+package src.main.java.org.sbolstandard.core.option2.protein;
 
 import java.net.URI;
 import java.util.Collection;
 import java.util.HashSet;
 
-import org.sbolstandard.core.option2.SequenceAnnotation;
+import src.main.java.org.sbolstandard.core.option2.SequenceAnnotation;
 
 /**
  * 

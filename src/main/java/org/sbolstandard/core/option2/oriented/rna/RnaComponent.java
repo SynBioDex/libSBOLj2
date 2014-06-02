@@ -1,10 +1,11 @@
-package org.sbolstandard.core.option2.oriented.rna;
+package src.main.java.org.sbolstandard.core.option2.oriented.rna;
 
 import java.net.URI;
 import java.util.Collection;
 import java.util.ArrayList;
 
-import org.sbolstandard.core.option2.oriented.OrientedComponent;
+import src.main.java.org.sbolstandard.core.option2.Sequence;
+import src.main.java.org.sbolstandard.core.option2.oriented.OrientedComponent;
 
 /**
  * 
@@ -37,9 +38,15 @@ public class RnaComponent extends OrientedComponent<RnaAnnotation> {
 		return this.sequence;
 	}
 	
-	@Override
-	public void getSequence(RnaSequence sequence) {
+	//@Override
+	public void setRnaSequence(RnaSequence sequence) {
 		this.sequence = sequence;
+	}
+
+	@Override
+	public void setSequence(Sequence sequence) {
+		setRnaSequence((RnaSequence)sequence);
+		
 	}
 
 }

@@ -1,16 +1,16 @@
 /**
  * 
  */
-package org.sbolstandard.core;
+package src.main.java.org.sbolstandard.core;
 
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 
-import org.sbolstandard.core.context.Context;
-import org.sbolstandard.core.interaction.Interaction;
-import org.sbolstandard.core.model.Model;
+import src.main.java.org.sbolstandard.core.context.Context;
+import src.main.java.org.sbolstandard.core.interaction.Interaction;
+import src.main.java.org.sbolstandard.core.model.Model;
 
 /**
  * @author Ernst Oberortner

@@ -1,8 +1,8 @@
-package org.sbolstandard.core.test;
+package src.test.java.org.sbolstandard.core.test;
 
 import org.apache.jena.riot.RDFFormat;
 
-import synbio.ncl.ac.uk.util.RDFHelper;
+import src.main.java.synbio.ncl.ac.uk.util.RDFHelper;
 
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.vocabulary.RDF;

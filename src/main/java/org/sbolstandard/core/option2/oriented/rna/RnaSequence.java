@@ -1,8 +1,8 @@
-package org.sbolstandard.core.option2.oriented.rna;
+package src.main.java.org.sbolstandard.core.option2.oriented.rna;
 
 import java.net.URI;
 
-import org.sbolstandard.core.option2.Sequence;
+import src.main.java.org.sbolstandard.core.option2.Sequence;
 
 /**
  * 

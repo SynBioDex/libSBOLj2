@@ -1,12 +1,12 @@
-package org.sbolstandard.core.option2;
+package src.main.java.org.sbolstandard.core.option2;
 
 import java.net.URI;
 import java.util.Collection;
 import java.util.HashSet;
 
-import org.sbolstandard.core.Component;
-import org.sbolstandard.core.Port;
-import org.sbolstandard.core.option2.Sequence;
+import src.main.java.org.sbolstandard.core.Component;
+import src.main.java.org.sbolstandard.core.Port;
+import src.main.java.org.sbolstandard.core.option2.Sequence;
 
 
 /**

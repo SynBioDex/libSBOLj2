@@ -1,11 +1,11 @@
-package org.sbolstandard.core.option2;
+package src.main.java.org.sbolstandard.core.option2;
 
 import java.net.URI;
 import java.util.Collection;
 
-import main.java.org.sbolstandard.core.Component;
+import src.main.java.org.sbolstandard.core.Component;
 
-import org.sbolstandard.core.ComponentInstantiation;
+import src.main.java.org.sbolstandard.core.ComponentInstantiation;
 
 /**
  * 

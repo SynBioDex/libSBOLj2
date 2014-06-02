@@ -1,10 +1,11 @@
-package org.sbolstandard.core.option2.generic;
+package src.main.java.org.sbolstandard.core.option2.generic;
 
 import java.net.URI;
 import java.util.Collection;
 import java.util.ArrayList;
 
-import org.sbolstandard.core.option2.SequenceComponent;
+import src.main.java.org.sbolstandard.core.option2.Sequence;
+import src.main.java.org.sbolstandard.core.option2.SequenceComponent;
 
 public class GenericSequenceComponent extends SequenceComponent<GenericSequenceAnnotation> {
 
@@ -33,10 +34,17 @@ public class GenericSequenceComponent extends SequenceComponent<GenericSequenceA
 		return this.sequence;
 	}
 	
-	@Override
-	public void setSequence(GenericSequence sequence) {
+	//@Override
+	public void setGenericSequence(GenericSequence sequence) {
 		this.sequence = sequence;
 	}
+
+	@Override
+	public void setSequence(Sequence sequence) {
+		setGenericSequence((GenericSequence) sequence);
+		
+	}
+	
 	
 
 }

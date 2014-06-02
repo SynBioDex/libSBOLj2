@@ -1,12 +1,12 @@
-package org.sbolstandard.core.option1;
+package src.main.java.org.sbolstandard.core.option1;
 
 import java.net.URI;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.ArrayList;
 
-import org.sbolstandard.core.Component;
-import org.sbolstandard.core.Port;
+import src.main.java.org.sbolstandard.core.Component;
+import src.main.java.org.sbolstandard.core.Port;
 
 
 /**
@@ -36,6 +36,12 @@ public class SequenceComponent
 		this.ports = new HashSet<Port>();
 	}
 
+	//TODO SEED.java calls this constructor. Make note that the parameter is incorrect. To 
+	//remove the errors, this temporary structure was set. 
+	public SequenceComponent(URI identity, String displayId, URI type, URI type2) {
+		super(identity, displayId, type);
+		
+	}
 	/**
 	 * 
 	 * @return the URI of the sequence's type

@@ -1,4 +1,4 @@
-package synbio.ncl.ac.uk.util;
+package src.main.java.synbio.ncl.ac.uk.util;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

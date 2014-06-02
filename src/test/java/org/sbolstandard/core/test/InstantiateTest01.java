@@ -1,4 +1,4 @@
-package org.sbolstandard.core.test;
+package src.test.java.org.sbolstandard.core.test;
 
 public class InstantiateTest01 {
 

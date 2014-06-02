@@ -1,9 +1,9 @@
-package org.sbolstandard.core.interaction;
+package src.main.java.org.sbolstandard.core.interaction;
 
 import java.net.URI;
 
-import org.sbolstandard.core.Identified;
-import org.sbolstandard.core.Signal;
+import src.main.java.org.sbolstandard.core.Identified;
+import src.main.java.org.sbolstandard.core.Signal;
 
 public class Participation 
 	extends Identified {

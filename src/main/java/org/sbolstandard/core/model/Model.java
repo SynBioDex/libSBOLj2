@@ -1,11 +1,11 @@
 /**
  * 
  */
-package org.sbolstandard.core.model;
+package src.main.java.org.sbolstandard.core.model;
 
 import java.net.URI;
 
-import org.sbolstandard.core.Documented;
+import src.main.java.org.sbolstandard.core.Documented;
 
 
 /**

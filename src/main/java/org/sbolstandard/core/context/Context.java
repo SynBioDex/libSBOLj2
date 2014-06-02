@@ -1,8 +1,8 @@
-package org.sbolstandard.core.context;
+package src.main.java.org.sbolstandard.core.context;
 
 import java.net.URI;
 
-import org.sbolstandard.core.Documented;
+import src.main.java.org.sbolstandard.core.Documented;
 
 public class Context 
 	extends Documented {

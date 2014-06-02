@@ -1,4 +1,4 @@
-package org.sbolstandard.core;
+package src.main.java.org.sbolstandard.core;
 
 import java.net.URI;
 
@@ -17,7 +17,7 @@ public abstract class Documented
 		super(identity);
 		this.displayId = displayId;
 	}
-
+//
 	/**
 	 * 
 	 * @return the displayId of the documented object
