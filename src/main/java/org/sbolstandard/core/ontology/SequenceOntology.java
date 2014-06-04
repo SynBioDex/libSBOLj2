@@ -1,4 +1,4 @@
-package src.main.java.org.sbolstandard.core.ontology;
+package org.sbolstandard.core.ontology;
 
 import java.net.URI;
 import java.util.HashMap;

@@ -1,10 +1,11 @@
-package src.main.java.org.sbolstandard.core;
+package org.sbolstandard.core;
 
 import java.net.URI;
 
 /**
  * 
  * @author Ernst Oberortner
+ * @author Nicholas Roehner
  */
 public abstract class Identified {
 	
@@ -12,9 +13,8 @@ public abstract class Identified {
 	private String annotation;
 
 	/**
-	 * Constructor requires only identity
 	 * 
-	 * @param identity
+	 * @param identity an identity for the identified object
 	 */
 	public Identified(URI identity) {
 		this.identity = identity;
@@ -22,15 +22,15 @@ public abstract class Identified {
 	
 	/**
 	 * 
-	 * @return the URI of the identified object
+	 * @return the identified object's identity
 	 */
 	public URI getIdentity() {
-		return this.identity;
+		return identity;
 	}
 
 	/**
 	 * 
-	 * @return the annotation (as String) of the identified object
+	 * @return the identified object's annotation
 	 */
 	public String getAnnotation() {
 		return annotation;
@@ -38,7 +38,7 @@ public abstract class Identified {
 
 	/**
 	 * 
-	 * @param annotation ... the annotation (as String) of the identified object 
+	 * @param annotation an annotation for the identified object
 	 */
 	public void setAnnotation(String annotation) {
 		this.annotation = annotation;

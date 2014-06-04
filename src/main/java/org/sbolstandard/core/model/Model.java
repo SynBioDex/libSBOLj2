@@ -1,19 +1,14 @@
-/**
- * 
- */
-package src.main.java.org.sbolstandard.core.model;
+package org.sbolstandard.core.model;
 
 import java.net.URI;
 
-import src.main.java.org.sbolstandard.core.Documented;
-
+import org.sbolstandard.core.Documented;
 
 /**
  * @author Ernst Oberortner
- *
+ * @author Nicholas Roehner
  */
-public class Model 
-	extends Documented {
+public class Model extends Documented {
 
 	private URI source;
 	private URI language;
@@ -22,17 +17,16 @@ public class Model
 	
 	/**
 	 * 
-	 * @param identity   ... the identity URI of the model
-	 * @param displayId  ... the displayId as String of the model
-	 * @param source     ... the source's URI of the model
-	 * @param language   ... the language's URI of the model
-	 * @param framework  ... the framework's URI of the model
-	 * @param role       ... the role's URI of the model
+	 * @param identity an identity for the model
+	 * @param displayId a displayId for the model
+	 * @param source a source for the model
+	 * @param language a language for the model
+	 * @param framework a framework for the model
+	 * @param role a role for the model
 	 */
-	public Model(URI identity, String displayId, 
-			URI source, URI language, URI framework, URI role) {
+	public Model(URI identity, String displayId, URI source, URI language, URI framework, 
+			URI role) {
 		super(identity, displayId);
-		
 		this.source = source;
 		this.language = language;
 		this.framework = framework;
@@ -40,28 +34,28 @@ public class Model
 	}
 
 	/**
-	 * @return the source's URI
+	 * @return the model's source
 	 */
 	public URI getSource() {
 		return source;
 	}
 
 	/**
-	 * @return the language's URI
+	 * @return the model's language
 	 */
 	public URI getLanguage() {
 		return language;
 	}
 
 	/**
-	 * @return the framework's URI
+	 * @return the model's framework
 	 */
 	public URI getFramework() {
 		return framework;
 	}
 
 	/**
-	 * @return the role's URI
+	 * @return the model's role
 	 */
 	public URI getRole() {
 		return role;

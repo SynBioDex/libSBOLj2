@@ -1,24 +1,42 @@
-package src.main.java.org.sbolstandard.core;
+package org.sbolstandard.core;
 
 import java.net.URI;
 import java.util.Collection;
 import java.util.HashSet;
 
-public class SBOLCollection 
-	extends Documented {
+/**
+ * 
+ * @author Ernst Oberortner
+ * @author Nicholas Roehner
+ */
+public class SBOLCollection extends Documented {
 
 	private Collection<Identified> elements;
 
+	/**
+	 * 
+	 * @param identity an identity for the SBOL collection
+	 * @param displayId a display ID for the SBOL collection
+	 */
 	public SBOLCollection(URI identity, String displayId) {
 		super(identity, displayId);
 		elements = new HashSet<Identified>();
 	}
 	
-	public void setElements(Collection<Identified> elements) {
-		this.elements = elements;
-	}
-
+	/**
+	 * 
+	 * @return a collection of the SBOL collection's elements
+	 */
 	public Collection<Identified> getElements() {
 		return elements;
 	}
+	
+	/**
+	 * 
+	 * @param element an identified element for the SBOL collection
+	 */
+	public void addElement(Identified element) {
+		elements.add(element);
+	}
+
 }

@@ -1,4 +1,4 @@
-package src.main.java.synbio.ncl.ac.uk.util;
+package synbio.ncl.ac.uk.util;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -76,7 +76,7 @@ public class RDFHelper {
 		 resource.addProperty (property, typeResource);
 	    }
 	 
-	 private String GetString() throws Exception
+	 private String getString() throws Exception
 		{
 			String rdfData=null;
 			ByteArrayOutputStream stream = new ByteArrayOutputStream();

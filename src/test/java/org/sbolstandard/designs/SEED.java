@@ -1,4 +1,4 @@
-package src.test.java.org.sbolstandard.designs;
+package org.sbolstandard.designs;
 
 import java.net.URI;
 import java.util.Collection;
@@ -7,18 +7,17 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import src.main.java.org.sbolstandard.core.Component;
-import src.main.java.org.sbolstandard.core.ComponentInstantiation;
-import src.main.java.org.sbolstandard.core.GenericComponent;
-import src.main.java.org.sbolstandard.core.Module;
-import src.main.java.org.sbolstandard.core.Port;
-import src.main.java.org.sbolstandard.core.PortMap;
-import src.main.java.org.sbolstandard.core.Signal;
-import src.main.java.org.sbolstandard.core.interaction.Interaction;
-import src.main.java.org.sbolstandard.core.interaction.Participation;
-import src.main.java.org.sbolstandard.core.ontology.SequenceOntology;
-import src.main.java.org.sbolstandard.core.option1.SequenceAnnotation;
-import src.main.java.org.sbolstandard.core.option1.SequenceComponent;
+import org.sbolstandard.core.component_option1.sequence.SequenceAnnotation;
+import org.sbolstandard.core.component_option1.sequence.SequenceComponent;
+import org.sbolstandard.core.component_option1.Component;
+import org.sbolstandard.core.component_option1.ComponentInstantiation;
+import org.sbolstandard.core.component_option1.generic.GenericComponent;
+import org.sbolstandard.core.interaction_option1.Interaction;
+import org.sbolstandard.core.interaction_option1.Participation;
+import org.sbolstandard.core.module_option1.Module;
+import org.sbolstandard.core.ontology.SequenceOntology;
+import org.sbolstandard.core.port_option1.Port;
+import org.sbolstandard.core.port_option1.PortMap;
 
 public class SEED {
 
@@ -71,47 +70,52 @@ public class SEED {
 		 */
 		
 		// pLac
-		this.components.put("pLac", new SequenceComponent(
-						URI.create(URI_PREFIX+"pLac"),         // identity
-						"pLac",                                 // displayId
-						SequenceOntology.getURI("DNA"),         // type URI
-						SequenceOntology.getURI("PROMOTER")));  // sequence type URI
- 
+		SequenceComponent pLac = new SequenceComponent(
+				URI.create(URI_PREFIX+"pLac"),		// identity
+				"pLac",                        		// displayId
+				SequenceOntology.getURI("DNA"));	// type URI
+		pLac.addSequenceType(SequenceOntology.getURI("PROMOTER"));	// sequence type URI
+		this.components.put("pLac", pLac);        
+		
 		// RBS
-		this.components.put("RBS", new SequenceComponent(
-				URI.create(URI_PREFIX+"rbs"),         // identity
-				"RBS",                                 // displayId
-				SequenceOntology.getURI("DNA"),        // type URI
-				SequenceOntology.getURI("RBS")));      // sequence type URI
+		SequenceComponent rbs = new SequenceComponent(
+				URI.create(URI_PREFIX+"rbs"),     	// identity
+				"RBS",                            	// displayId
+				SequenceOntology.getURI("DNA"));   	// type URI
+		rbs.addSequenceType(SequenceOntology.getURI("RBS"));	// sequence type URI
+		this.components.put("RBS", rbs);      
 
 		// LacI
-		this.components.put("LacI", new SequenceComponent(
-				URI.create(URI_PREFIX+"LacI"),           // identity
-				"LacI",                                   // displayId
-				SequenceOntology.getURI("PROTEIN"),       // type URI
-				SequenceOntology.getURI("TRANSCRIPT")));  // sequence type URI
-	
+		SequenceComponent lacI = new SequenceComponent(
+				URI.create(URI_PREFIX+"LacI"),    		// identity
+				"LacI",                            		// displayId
+				SequenceOntology.getURI("PROTEIN")); 	// type URI
+		lacI.addSequenceType(SequenceOntology.getURI("TRANSCRIPT"));	// sequence type URI
+		this.components.put("LacI", lacI);  
 
 		// TetR
-		this.components.put("TetR", new SequenceComponent(
-				URI.create(URI_PREFIX+"TetR"),           // identity
-				"TetR",                                   // displayId
-				SequenceOntology.getURI("PROTEIN"),       // type URI
-				SequenceOntology.getURI("TRANSCRIPT")));  // sequence type URI
-
+		SequenceComponent tetR = new SequenceComponent(
+				URI.create(URI_PREFIX+"TetR"),         	// identity
+				"TetR",                                 // displayId
+				SequenceOntology.getURI("PROTEIN"));	// type URI
+		tetR.addSequenceType(SequenceOntology.getURI("TRANSCRIPT"));	// sequence type URI
+		this.components.put("TetR", tetR); 
+		
 		// Double Terminator
-		this.components.put("Double_Termintator", new SequenceComponent(
-				URI.create(URI_PREFIX+"double_terminator"),           // identity
-				"Double_Terminator",                                   // displayId
-				SequenceOntology.getURI("DNA"),       // type URI
-				SequenceOntology.getURI("Terminator")));  // sequence type URI
+		SequenceComponent dterm = new SequenceComponent(
+				URI.create(URI_PREFIX+"double_terminator"),	// identity
+				"Double_Terminator",                       	// displayId
+				SequenceOntology.getURI("DNA"));			// type URI
+		dterm.addSequenceType(SequenceOntology.getURI("Terminator"));	// sequence type URI
+		this.components.put("Double_Termintator", dterm);       
 
 		// cTetR
-		this.components.put("cTetR", new SequenceComponent(
-				URI.create(URI_PREFIX+"cTetR"),           // identity
-				"cTetR",                                   // displayId
-				SequenceOntology.getURI("DNA"),       // type URI
-				SequenceOntology.getURI("CDS")));  // sequence type URI
+		SequenceComponent cTetR = new SequenceComponent(
+				URI.create(URI_PREFIX+"cTetR"), 	// identity
+				"cTetR",                       		// displayId
+				SequenceOntology.getURI("DNA"));	// type URI	
+		cTetR.addSequenceType(SequenceOntology.getURI("CDS"));	// sequence type URI
+		this.components.put("cTetR", cTetR);  
 
 	}
 	
@@ -145,8 +149,8 @@ public class SEED {
 		SequenceComponent uu001 = new SequenceComponent(
 				URI.create(URI_PREFIX+"UU_001"),          // identity
 				"LacI-repressed_TetR_Gene",               // displayId
-				SequenceOntology.getURI("Gene"),          // type URI
-				SequenceOntology.getURI("Gene"));         // sequence type URI
+				SequenceOntology.getURI("Gene"));          // type URI
+		uu001.addSequenceType(SequenceOntology.getURI("Gene"));	 // sequence type URI
 		uu001.setName("LacI-repressed TetR Gene");
 		
 		/*
@@ -155,26 +159,46 @@ public class SEED {
 		 */
 		SequenceAnnotation anno1 = new SequenceAnnotation(
 				URI.create(URI_PREFIX+"UU_001/anno1"),
-				"LacI-repressed_TetR_Gene_anno1",
-				(SequenceComponent)this.components.get("pLac"));		
+				"LacI-repressed_TetR_Gene_anno1");	
+		
+		ComponentInstantiation compIn1 = new ComponentInstantiation(
+				URI.create(URI_PREFIX+"UU_001/compIn1"), 
+				"LacI-repressed_TetR_Gene_compIn1", 
+				(SequenceComponent)this.components.get("pLac"));
+		anno1.setSubComponentInstantiation(compIn1);
 		uu001.getSequenceAnnotations().add(anno1);
 		
 		SequenceAnnotation anno2 = new SequenceAnnotation(
 				URI.create(URI_PREFIX+"UU_001/anno2"),
-				"LacI-repressed_TetR_Gene_anno2",
+				"LacI-repressed_TetR_Gene_anno2");
+		
+		ComponentInstantiation compIn2 = new ComponentInstantiation(
+				URI.create(URI_PREFIX+"UU_001/compIn2"), 
+				"LacI-repressed_TetR_Gene_compIn2", 
 				(SequenceComponent)this.components.get("RBS"));
+		anno2.setSubComponentInstantiation(compIn2);
 		uu001.getSequenceAnnotations().add(anno2);
 
 		SequenceAnnotation anno3 = new SequenceAnnotation(
 						URI.create(URI_PREFIX+"UU_001/anno3"),
-						"LacI-repressed_TetR_Gene_anno3",
-						(SequenceComponent)this.components.get("Double_Terminator"));
+						"LacI-repressed_TetR_Gene_anno3");
+		
+		ComponentInstantiation compIn3 = new ComponentInstantiation(
+				URI.create(URI_PREFIX+"UU_001/compIn3"), 
+				"LacI-repressed_TetR_Gene_compIn3", 
+				(SequenceComponent)this.components.get("Double_Terminator"));
+		anno3.setSubComponentInstantiation(compIn3);
 		uu001.getSequenceAnnotations().add(anno3);
 		
 		SequenceAnnotation anno4 = new SequenceAnnotation(
 						URI.create(URI_PREFIX+"UU_001/anno4"),
-						"LacI-repressed_TetR_Gene_anno4",
-						(SequenceComponent)this.components.get("cTetR"));
+						"LacI-repressed_TetR_Gene_anno4");
+		
+		ComponentInstantiation compIn4 = new ComponentInstantiation(
+				URI.create(URI_PREFIX+"UU_001/compIn4"), 
+				"LacI-repressed_TetR_Gene_compIn4", 
+				(SequenceComponent)this.components.get("cTetR"));
+		anno4.setSubComponentInstantiation(compIn4);
 		uu001.getSequenceAnnotations().add(anno4);
 		
 		/*
@@ -184,27 +208,27 @@ public class SEED {
 		// here, we 
 		Port port1 = new Port(
 				URI.create(URI_PREFIX+"UU_001/port1"),
-				"LacI-repressed_TetR_Gene_por1",
-				anno1);
-		uu001.getPorts().add(port1);
+				"LacI-repressed_TetR_Gene_port1",
+				compIn1);
+		uu001.addPort(port1);
 		
 		Port port2 = new Port(
 				URI.create(URI_PREFIX+"UU_001/port2"),
 				"LacI-repressed_TetR_Gene_port2",
-				anno2);
-		uu001.getPorts().add(port2);
+				compIn2);
+		uu001.addPort(port2);
 
 		Port port3 = new Port(
 				URI.create(URI_PREFIX+"UU_001/port3"),
 				"LacI-repressed_TetR_Gene_port3",
-				anno3);
-		uu001.getPorts().add(port3);
+				compIn3);
+		uu001.addPort(port3);
 
 		Port port4 = new Port(
 				URI.create(URI_PREFIX+"UU_001/port4"),
 				"LacI-repressed_TetR_Gene_port4",
-				anno4);
-		uu001.getPorts().add(port4);
+				compIn4);
+		uu001.addPort(port4);
 
 		// currently, we ``store'' the sequence annotation twice 
 		// uu001.getSequenceAnnotations().add(anno1) + uu001.getPorts().add(port1)
@@ -245,67 +269,67 @@ public class SEED {
 		 */
 
 		// Signal that instantiates the pLac sequence component 
-		Signal pLacSig = new Signal(
+		ComponentInstantiation pLacSig = new ComponentInstantiation(
 				URI.create(URI_PREFIX+"UU_001M/pLac_sig"),
 				"pLac_Signal",
 				this.components.get("pLac"));
 		// we need to add the signal to the module 
-		lacIMod.getSignals().add(pLacSig);
+		lacIMod.addComponentInstantiation(pLacSig);
 		
 		// Signal that instantiates the RBS sequence component 
-		Signal rbsSig = new Signal(
+		ComponentInstantiation rbsSig = new ComponentInstantiation(
 				URI.create(URI_PREFIX+"UU_001M/rbs_sig"),
 				"RBS_Signal",
 				this.components.get("RBS"));
-		lacIMod.getSignals().add(rbsSig);
+		lacIMod.addComponentInstantiation(rbsSig);
 		
 		// Signal that instantiates the LacI sequence component 
-		Signal lacISig = new Signal(
+		ComponentInstantiation lacISig = new ComponentInstantiation(
 				URI.create(URI_PREFIX+"UU_001M/lacI_sig"),
 				"LacI_Signal",
 				this.components.get("LacI"));
-		lacIMod.getSignals().add(lacISig);
+		lacIMod.addComponentInstantiation(lacISig);
 		
 		// Signal that instantiates the TetR sequence component 
-		Signal tetRSig = new Signal(
+		ComponentInstantiation tetRSig = new ComponentInstantiation(
 				URI.create(URI_PREFIX+"UU_001M/tetR_sig"),
 				"TetR_Signal",
 				this.components.get("TetR"));
-		lacIMod.getSignals().add(tetRSig);
+		lacIMod.addComponentInstantiation(tetRSig);
 
 		// Signal that instantiates the Double_Terminator sequence component 
-		Signal doubleTerminatorSig = new Signal(
+		ComponentInstantiation doubleTerminatorSig = new ComponentInstantiation(
 				URI.create(URI_PREFIX+"UU_001M/double_terminator_sig"),
 				"Double_Terminator_Signal",
 				this.components.get("Double_Termintator"));
-		lacIMod.getSignals().add(doubleTerminatorSig);
+		lacIMod.addComponentInstantiation(doubleTerminatorSig);
 
 		// Signal that instantiates the cTetR sequence component 
-		Signal cTetRSig = new Signal(
+		ComponentInstantiation cTetRSig = new ComponentInstantiation(
 				URI.create(URI_PREFIX+"UU_001M/cTetR_sig"),
 				"cTetR_Signal",
 				this.components.get("cTetR"));
-		lacIMod.getSignals().add(cTetRSig);
+		lacIMod.addComponentInstantiation(cTetRSig);
 
 		/*
 		 * 2. Signals that instantiate generic components
 		 */
-		Signal iptgSig = new Signal(
+		ComponentInstantiation iptgSig = new ComponentInstantiation(
 				URI.create(URI_PREFIX+"UU_001M/iptgSig"),
 				"IPTG",
 				this.components.get("IPTG"));
-		lacIMod.getSignals().add(iptgSig);
+		lacIMod.addComponentInstantiation(iptgSig);
 
-		Signal iptgLacISig = new Signal(
+		ComponentInstantiation iptgLacISig = new ComponentInstantiation(
 				URI.create(URI_PREFIX+"UU_001M/iptgLacISig"),
 				"IPTG_LacI_Complex",
 				this.components.get("IPTG-LacI"));
-		lacIMod.getSignals().add(iptgLacISig);
+		lacIMod.addComponentInstantiation(iptgLacISig);
 
 		/*
 		 * 3. Signal with port maps
 		 */
-		Signal portMapSignal = new Signal(
+		ComponentInstantiation portMapSignal = new ComponentInstantiation(
 				URI.create(URI_PREFIX+"UU_001M/portMapSig"),
 				"port_map_signal",
 				this.components.get("LacI-repressed TetR gene"));
