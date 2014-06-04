@@ -3,69 +3,62 @@ package org.sbolstandard.designs;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
-import org.sbolstandard.core.GenericComponent;
-import org.sbolstandard.core.Module;
-import org.sbolstandard.core.ModuleInstantiation;
-import org.sbolstandard.core.Port;
-import org.sbolstandard.core.PortMap;
-import org.sbolstandard.core.Signal;
-import org.sbolstandard.core.interaction.Interaction;
-import org.sbolstandard.core.interaction.Participation;
-import org.sbolstandard.core.option2.oriented.dna.DnaComponent;
-import org.sbolstandard.core.option2.protein.ProteinComponent;
+import org.sbolstandard.core.component_option2.ComponentInstantiation;
+import org.sbolstandard.core.component_option2.generic.GenericComponent;
+import org.sbolstandard.core.component_option2.generic.GenericComponentInstantiation;
+import org.sbolstandard.core.component_option2.sequence.oriented.dna.DnaComponent;
+import org.sbolstandard.core.component_option2.sequence.oriented.dna.DnaComponentInstantiation;
+import org.sbolstandard.core.component_option2.sequence.protein.ProteinComponent;
+import org.sbolstandard.core.component_option2.sequence.protein.ProteinComponentInstantiation;
+import org.sbolstandard.core.interaction_option2.Interaction;
+import org.sbolstandard.core.interaction_option2.Participation;
+import org.sbolstandard.core.module_option2.Module;
+import org.sbolstandard.core.module_option2.ModuleInstantiation;
+import org.sbolstandard.core.port_option2.Port;
+import org.sbolstandard.core.port_option2.PortMap;
 
 public class SubtilinReceiver {
+	
 	ProteinComponent spaKProteinComp = new ProteinComponent(
 			URI.create("http://turingatemyhamter.co.uk/example#SpaK_protein"), 
 			"SpaK_protein",
-			URI.create("http://purl.obolibrary.org/obo/GO_0000155"),// kinase activity
-			URI.create("http://turingatemyhamter.co.uk/Protein"));
+			URI.create("http://purl.obolibrary.org/obo/GO_0000155")); // kinase activity
 
 	DnaComponent spaKCDSComp = new DnaComponent(
 			URI.create("http://turingatemyhamter.co.uk/example#SpaK_CDS"),
 			"spaK_CDS", 
-			URI.create("http://purl.obolibrary.org/obo/SO_0000316"),// so:CDS
-			URI.create("http://turingatemyhamter.co.uk/DNA"));
-
+			URI.create("http://purl.obolibrary.org/obo/SO_0000316"));// so:CDS
+			
 	ProteinComponent spaRProteinComp = new ProteinComponent(
 			URI.create("http://turingatemyhamter.co.uk/example#SpaR_protein"), 
 			"SpaR_protein",
-			URI.create("http://purl.obolibrary.org/obo/GO_0000156"), // response regulator activity
-			URI.create("http://turingatemyhamter.co.uk/Protein"));
-
+			URI.create("http://purl.obolibrary.org/obo/GO_0000156")); // response regulator activity
+			
 	DnaComponent spaRCDSComp = new DnaComponent(
 			URI.create("http://turingatemyhamter.co.uk/example#SpaR_CDS"),
 			"SpaR_CDS", 
-			URI.create("http://purl.obolibrary.org/obo/SO_0000316"), // CDS
-			URI.create("http://turingatemyhamter.co.uk/DNA"));
-
-	
+			URI.create("http://purl.obolibrary.org/obo/SO_0000316")); // CDS
+			
 	ProteinComponent gfpProteinComp = new ProteinComponent(
 		    URI.create("http://turingatemyhamter.co.uk/example#GFP_protein"),
 		    "GFP_protein",
-		    URI.create("http://purl.obolibrary.org/obo/MI_0367"), // GFP
-		    URI.create("http://turingatemyhamter.co.uk/Protein"));
-		  
-
+		    URI.create("http://purl.obolibrary.org/obo/MI_0367")); // GFP
+		    
 	DnaComponent gfpCDSComp = new DnaComponent(
 		    URI.create("http://turingatemyhamter.co.uk/example#GFP_CDS"),
 		    "GFP_CDS",
-		    URI.create("http://purl.obolibrary.org/obo/SO_0000316"), // CDS
-			URI.create("http://turingatemyhamter.co.uk/DNA"));
-		  
+		    URI.create("http://purl.obolibrary.org/obo/SO_0000316")); // CDS
+			
 	DnaComponent pspaSPromoterComp = new DnaComponent(
 		    URI.create("http://turingatemyhamter.co.uk/example#pspaS_promoter"),
 		    "pspaS_promoter",
-		    URI.create("http://purl.obolibrary.org/obo/SO_0000167"), // Promoter
-		    URI.create("http://turingatemyhamter.co.uk/DNA"));
-		
+		    URI.create("http://purl.obolibrary.org/obo/SO_0000167")); // Promoter
+		    
 	DnaComponent pspaRKPromoterComp = new DnaComponent(
 		    URI.create("http://turingatemyhamter.co.uk/example#pspaRK_promoter"),
 		    "pspaRK_promoter",
-		    URI.create("http://purl.obolibrary.org/obo/SO_0000167"), // Promoter
-		    URI.create("http://turingatemyhamter.co.uk/DNA"));
+		    URI.create("http://purl.obolibrary.org/obo/SO_0000167")); // Promoter
 
 	GenericComponent subtilinComp =new GenericComponent(
 		    URI.create("http://turingatemyhamter.co.uk/example#subtilin"),
@@ -75,44 +68,61 @@ public class SubtilinReceiver {
 	DnaComponent spaK_RBS_Comp= new DnaComponent(
 		    URI.create("http://turingatemyhamter.co.uk/example#spaK_RBS_Comp"),
 		    "spaK RBS",
-		    URI.create("http://purl.obolibrary.org/obo/SO_0000552"), // Promoter
-		    URI.create("http://turingatemyhamter.co.uk/DNA"));
+		    URI.create("http://purl.obolibrary.org/obo/SO_0000552")); // Promoter
+		    
 
 	DnaComponent spaR_RBS_Comp= new DnaComponent(
 		    URI.create("http://turingatemyhamter.co.uk/example#spaR_RBS_Comp"),
 		    "spaR RBS",
-		    URI.create("http://purl.obolibrary.org/obo/SO_0000552"), // Promoter
-		    URI.create("http://turingatemyhamter.co.uk/DNA"));
+		    URI.create("http://purl.obolibrary.org/obo/SO_0000552")); // Promoter
+		    
 
 	DnaComponent gfp_RBS_Comp= new DnaComponent(
 		    URI.create("http://turingatemyhamter.co.uk/example#gfp_RBS_Comp"),
 		    "gfp RBS",
-		    URI.create("http://purl.obolibrary.org/obo/SO_0000552"), // Promoter
-		    URI.create("http://turingatemyhamter.co.uk/DNA"));
+		    URI.create("http://purl.obolibrary.org/obo/SO_0000552")); // Promoter
+		    
  
 	DnaComponent spaRKTerminatorComp= new DnaComponent(
 		    URI.create("http://turingatemyhamter.co.uk/example#spaRKTerminatorComp"),
 		    "spaRK Terminator",
-		    URI.create("http://purl.obolibrary.org/obo/SO_0000614"), // Terminator
-		    URI.create("http://turingatemyhamter.co.uk/DNA"));
+		    URI.create("http://purl.obolibrary.org/obo/SO_0000614")); // Terminator
+		    
 
 
 	DnaComponent gfpTerminatorComp= new DnaComponent(
 		    URI.create("http://turingatemyhamter.co.uk/example#gfpTerminatorComp"),
 		    "gfp Terminator",
-		    URI.create("http://purl.obolibrary.org/obo/SO_0000614"), // Terminator
-		    URI.create("http://turingatemyhamter.co.uk/DNA"));
+		    URI.create("http://purl.obolibrary.org/obo/SO_0000614")); // Terminator
+		    
 	
 	  DnaComponent spaRKOperon=new DnaComponent(
 			    URI.create("http://turingatemyhamter.co.uk/example#spaRKOperon"),
 			    "spaRK Operon",
-			    URI.create("http://purl.obolibrary.org/obo/SO_0000178"), // Operon
-			    URI.create("http://turingatemyhamter.co.uk/DNA"));
+			    URI.create("http://purl.obolibrary.org/obo/SO_0000178")); // Operon
+			    
+	  
+	  public SubtilinReceiver() {
+		  spaKProteinComp.addSequenceType(URI.create("http://turingatemyhamter.co.uk/Protein"));
+		  spaKCDSComp.addSequenceType(URI.create("http://turingatemyhamter.co.uk/DNA"));
+		  spaRProteinComp.addSequenceType(URI.create("http://turingatemyhamter.co.uk/Protein"));
+		  spaRCDSComp.addSequenceType(URI.create("http://turingatemyhamter.co.uk/DNA"));
+		  gfpProteinComp.addSequenceType(URI.create("http://turingatemyhamter.co.uk/Protein"));
+		  gfpCDSComp.addSequenceType(URI.create("http://turingatemyhamter.co.uk/DNA"));
+		  pspaSPromoterComp.addSequenceType(URI.create("http://turingatemyhamter.co.uk/DNA"));
+		  pspaRKPromoterComp.addSequenceType(URI.create("http://turingatemyhamter.co.uk/DNA"));
+		  spaK_RBS_Comp.addSequenceType(URI.create("http://turingatemyhamter.co.uk/DNA"));
+		  spaR_RBS_Comp.addSequenceType(URI.create("http://turingatemyhamter.co.uk/DNA"));
+		  gfp_RBS_Comp.addSequenceType(URI.create("http://turingatemyhamter.co.uk/DNA"));
+		  spaRKTerminatorComp.addSequenceType(URI.create("http://turingatemyhamter.co.uk/DNA"));
+		  gfpTerminatorComp.addSequenceType(URI.create("http://turingatemyhamter.co.uk/DNA"));
+		  spaRKOperon.addSequenceType(URI.create("http://turingatemyhamter.co.uk/DNA"));
+	  }
 	  				    			    
 	 
 	  private ProteinEncodingCdsModule getProteinEncodingCDSModule(String moduleName, String CDSName, String proteinName)
 		 {
-			 Signal proteinComp_sig = new Signal(
+			 ComponentInstantiation proteinComp_sig = new ProteinComponentInstantiation(
 				      URI.create(String.format("http://turingatemyhamter.co.uk/example#%s/%s",moduleName,proteinName)),
 				      proteinName,
 				      spaKProteinComp
@@ -124,7 +134,7 @@ public class SubtilinReceiver {
 				      proteinComp_sig);
 				      
 
-			 Signal CDSComp_sig = new Signal(
+			 ComponentInstantiation CDSComp_sig = new DnaComponentInstantiation(
 				      URI.create(String.format("http://turingatemyhamter.co.uk/example#%s/%s",moduleName,CDSName)),
 				      CDSName,
 				      spaKCDSComp);
@@ -152,16 +162,19 @@ public class SubtilinReceiver {
 		     Module module=new Module(
 		    	     URI.create(String.format("http://turingatemyhamter.co.uk/example#%s",moduleName)),
 				      "SpaK module");
-		     module.setPorts(new ArrayList<Port>(Arrays.asList(CDSComp_port,proteinComp_port)));
-		     module.setSignals(new ArrayList<Signal>(Arrays.asList(CDSComp_sig,proteinComp_sig)));
-		     module.setInteractions(new ArrayList<Interaction>(Arrays.asList(interaction)));	     	     
+		     for (Port port : new ArrayList<Port>(Arrays.asList(CDSComp_port,proteinComp_port)))
+		    	 module.addPort(port);
+		     for (ComponentInstantiation signal : new ArrayList<ComponentInstantiation>(Arrays.asList(CDSComp_sig,proteinComp_sig)))
+		    	 module.addComponentInstantiation(signal);
+		     for (Interaction inter : new ArrayList<Interaction>(Arrays.asList(interaction)))
+		    	 module.addInteraction(inter);	     	     
 
 			return new ProteinEncodingCdsModule(module,CDSComp_port,proteinComp_port);
 		 }
 	  
 	  private Module gfpProductionModule()
 		 {
-			 Signal pspaSPromoterComp_sig = new Signal(
+		  ComponentInstantiation pspaSPromoterComp_sig = new DnaComponentInstantiation(
 				      URI.create("http://turingatemyhamter.co.uk/example#GFP_production_module/pspaS_promoter"),
 				      "pspaS_promoter",
 				      pspaSPromoterComp
@@ -175,7 +188,7 @@ public class SubtilinReceiver {
 			 ProteinEncodingCdsModule gfpTranslationModule=getProteinEncodingCDSModule("GFP_module", "GFP_CDS", "GFP_Protein");
 				
 
-			 Signal gfpCDS_sig = new Signal(
+			 ComponentInstantiation gfpCDS_sig = new DnaComponentInstantiation(
 				      URI.create("http://turingatemyhamter.co.uk/example#GFP_production_module/gfp_cds"),
 				      "gfp_cds",
 				      gfpCDSComp);
@@ -206,19 +219,24 @@ public class SubtilinReceiver {
 		     Module module=new Module(
 		    	     URI.create("http://turingatemyhamter.co.uk/example#GFP_production_module"),
 				      "GFP_production_module");
-		     module.setSignals(new ArrayList<Signal>(Arrays.asList(pspaSPromoterComp_sig,gfpCDS_sig)));
-		     module.setPorts(new ArrayList<Port>(Arrays.asList(pspaSPromoterComp_port)));
-		     module.setInteractions(new ArrayList<Interaction>(Arrays.asList(interaction)));	     	     
-		     module.setSubModules(new ArrayList<ModuleInstantiation>(Arrays.asList(subModule)));	
-		     
-		     subModule.setPortMaps(new ArrayList<PortMap>(Arrays.asList(portMap)));
+		     for (ComponentInstantiation signal : new ArrayList<ComponentInstantiation>(Arrays.asList(pspaSPromoterComp_sig,gfpCDS_sig)))
+		    	 module.addComponentInstantiation(signal);
+		     for (Port port : new ArrayList<Port>(Arrays.asList(pspaSPromoterComp_port)))
+		    	 module.addPort(port);
+		     for (Interaction inter : new ArrayList<Interaction>(Arrays.asList(interaction)))
+		    	 module.addInteraction(inter);
+		     for (ModuleInstantiation modi : new ArrayList<ModuleInstantiation>(Arrays.asList(subModule)))
+		    	 module.addSubModuleInstantiation(modi);	
+		   
+		     for (PortMap pmap : new ArrayList<PortMap>(Arrays.asList(portMap)))
+		    	 subModule.addPortMap(pmap);
 		     //module.setPortMaps(new ArrayList<PortMap>(Arrays.asList(portMap)));		     
 			return module;									
 		 }
 
 	  private Module spaKspaRProductionModule()
 		 {
-			 Signal pspaRKPromoterComp_sig = new Signal(
+		  ComponentInstantiation pspaRKPromoterComp_sig = new DnaComponentInstantiation(
 				      URI.create("http://turingatemyhamter.co.uk/example#GFP_production_module/pspaRK_promoter"),
 				      "pspaRK_promoter",
 				      pspaRKPromoterComp
@@ -231,14 +249,14 @@ public class SubtilinReceiver {
 			
 			 ProteinEncodingCdsModule spaKTranslationModule=getProteinEncodingCDSModule("SpaK_module", "SpaK_CDS", "SpaK_Protein");		
 
-			 Signal spaKCDS_sig = new Signal(
+			 ComponentInstantiation spaKCDS_sig = new DnaComponentInstantiation(
 				      URI.create("http://turingatemyhamter.co.uk/example#GFP_production_module/SpaK_CDS"),
 				      "SpaK_CDS",
 				      spaKCDSComp);
 			 
 			 ProteinEncodingCdsModule spaRTranslationModule=getProteinEncodingCDSModule("SpaR_module", "SpaR_CDS", "SpaR_Protein");		
 
-			 Signal spaRCDS_sig = new Signal(
+			 ComponentInstantiation spaRCDS_sig = new DnaComponentInstantiation(
 				      URI.create("http://turingatemyhamter.co.uk/example#GFP_production_module/SpaR_CDS"),
 				      "SpaR_CDS",
 				      spaRCDSComp);
@@ -288,15 +306,20 @@ public class SubtilinReceiver {
 		     Module module=new Module(
 		    	     URI.create("http://turingatemyhamter.co.uk/example#GFP_production_module"),
 				      "GFP_production_module");
-		     module.setSignals(new ArrayList<Signal>(Arrays.asList(pspaRKPromoterComp_sig,spaKCDS_sig,spaRCDS_sig)));
-		     module.setPorts(new ArrayList<Port>(Arrays.asList(pspaRKPromoterComp_port)));
-		     module.setInteractions(new ArrayList<Interaction>(Arrays.asList(interaction)));	     	     
-		     module.setSubModules(new ArrayList<ModuleInstantiation>(Arrays.asList(subModuleSpaK,subModuleSpaR)));
+		     for (ComponentInstantiation signal : new ArrayList<ComponentInstantiation>(Arrays.asList(pspaRKPromoterComp_sig,spaKCDS_sig,spaRCDS_sig)))
+		    	 module.addComponentInstantiation(signal);
+		     for (Port port : new ArrayList<Port>(Arrays.asList(pspaRKPromoterComp_port)))
+		    	 module.addPort(port);
+		     for (Interaction inter : new ArrayList<Interaction>(Arrays.asList(interaction)))
+		    	 module.addInteraction(inter);
+		     for (ModuleInstantiation modi : new ArrayList<ModuleInstantiation>(Arrays.asList(subModuleSpaK,subModuleSpaR)))
+		    	 module.addSubModuleInstantiation(modi);
 		     
 		     //TODO module.setPortMaps(new ArrayList<PortMap>(Arrays.asList(portMapSpaK,portMapSpaR)));	     	     
-		     		     
-		     subModuleSpaK.setPortMaps(new ArrayList<PortMap>(Arrays.asList(portMapSpaK)));	     	     
-		     subModuleSpaR.setPortMaps(new ArrayList<PortMap>(Arrays.asList(portMapSpaR)));	     	     
+		     for (PortMap pmap : new ArrayList<PortMap>(Arrays.asList(portMapSpaK)))
+		    	 subModuleSpaK.addPortMap(pmap);
+		     for (PortMap pmap : new ArrayList<PortMap>(Arrays.asList(portMapSpaR)))
+		    	 subModuleSpaR.addPortMap(pmap);   	     
 		     
 			return module;									
 		 }
@@ -304,7 +327,7 @@ public class SubtilinReceiver {
 	 
 	  private Module pspaSActivationModule()
 		 {
-			 Signal pspaSPromoterComp_sig = new Signal(
+		  	ComponentInstantiation pspaSPromoterComp_sig = new DnaComponentInstantiation(
 				      URI.create("http://turingatemyhamter.co.uk/example#pspaS_activation_module/pspaS_promoter"),
 				      "pspaS_promoter",
 				      pspaSPromoterComp
@@ -315,7 +338,7 @@ public class SubtilinReceiver {
 				      "pspaS_promoter_port",
 				      pspaSPromoterComp_sig);
 			
-			 Signal spaRProteinComp_sig = new Signal(
+			 ComponentInstantiation spaRProteinComp_sig = new ProteinComponentInstantiation(
 				      URI.create("http://turingatemyhamter.co.uk/example#pspaS_activation_module/SpaR_protein"),
 				      "SpaR_protein",
 				      spaRProteinComp);
@@ -344,17 +367,20 @@ public class SubtilinReceiver {
 		     Module module=new Module(
 		    	     URI.create("http://turingatemyhamter.co.uk/example#pspaS_activation_module"),
 				      "pspaS_activation_module");
-		     module.setSignals(new ArrayList<Signal>(Arrays.asList(pspaSPromoterComp_sig, spaRProteinComp_sig)));
-		     module.setPorts(new ArrayList<Port>(Arrays.asList(pspaSPromoterComp_port,spaRProteinComp_port)));
-		     module.setInteractions(new ArrayList<Interaction>(Arrays.asList(interaction)));	     	     
-		     
+		     for (ComponentInstantiation signal : new ArrayList<ComponentInstantiation>(Arrays.asList(pspaSPromoterComp_sig, spaRProteinComp_sig)))
+		    	 module.addComponentInstantiation(signal);
+		     for (Port port : new ArrayList<Port>(Arrays.asList(pspaSPromoterComp_port,spaRProteinComp_port)))
+		    	 module.addPort(port);
+		     for (Interaction inter : new ArrayList<Interaction>(Arrays.asList(interaction)))
+		    	 module.addInteraction(inter);
+		  
 			return module;									
 		 }
 
 	  private Module spaRActivationModule()
 		 {
 			
-			 Signal spaRProteinComp_sig = new Signal(
+		  ComponentInstantiation spaRProteinComp_sig = new ProteinComponentInstantiation(
 				      URI.create("http://turingatemyhamter.co.uk/example#spaR_activation_module/SpaR_protein"),
 				      "SpaR_protein",
 				      spaRProteinComp);
@@ -365,7 +391,7 @@ public class SubtilinReceiver {
 				      "spaR_protein_port",
 				      spaRProteinComp_sig);
 			 
-			 Signal spaR_P_ProteinComp_sig = new Signal(
+			 ComponentInstantiation spaR_P_ProteinComp_sig = new ProteinComponentInstantiation(
 				      URI.create("http://turingatemyhamter.co.uk/example#spaR_activation_module/SpaR_P_protein"),
 				      "SpaR_protein",
 				      spaRProteinComp);
@@ -376,7 +402,7 @@ public class SubtilinReceiver {
 				      "spaR_P_protein_port",
 				      spaR_P_ProteinComp_sig);
 			 
-			 Signal spaKProteinComp_sig = new Signal(
+			 ComponentInstantiation spaKProteinComp_sig = new ProteinComponentInstantiation(
 				      URI.create("http://turingatemyhamter.co.uk/example#spaR_activation_module/SpaK_protein"),
 				      "SpaK_protein",
 				      spaKProteinComp);
@@ -387,7 +413,7 @@ public class SubtilinReceiver {
 				      "spaK_protein_port",
 				      spaKProteinComp_sig);
 			 
-			 Signal spaK_P_ProteinComp_sig = new Signal(
+			 ComponentInstantiation spaK_P_ProteinComp_sig = new ProteinComponentInstantiation(
 				      URI.create("http://turingatemyhamter.co.uk/example#spaR_activation_module/SpaK_P_protein"),
 				      "SpaK_protein",
 				      spaKProteinComp);
@@ -398,7 +424,7 @@ public class SubtilinReceiver {
 				      "spaK_P_protein_port",
 				      spaK_P_ProteinComp_sig);
 			 
-			 Signal subtilinComp_sig = new Signal(
+			 ComponentInstantiation subtilinComp_sig = new GenericComponentInstantiation(
 				      URI.create("http://turingatemyhamter.co.uk/example#spaR_activation_module/subtilin"),
 				      "subtilin",
 				      subtilinComp);
@@ -456,10 +482,13 @@ public class SubtilinReceiver {
 		     Module module=new Module(
 		    	     URI.create("http://turingatemyhamter.co.uk/example#pspaS_activation_module"),
 				      "pspaS_activation_module");
-		     module.setSignals(new ArrayList<Signal>(Arrays.asList(spaRProteinComp_sig, spaR_P_ProteinComp_sig,spaKProteinComp_sig,spaK_P_ProteinComp_sig,subtilinComp_sig)));
-		     module.setPorts(new ArrayList<Port>(Arrays.asList(spaRProteinComp_port,spaR_P_ProteinComp_port, spaKProteinComp_port,spaK_P_ProteinComp_port,subtilinComp_port)));
-		     module.setInteractions(new ArrayList<Interaction>(Arrays.asList(interactionSpaKActivation,interactionSpaRActivation)));	     	     
-		     
+		 for (ComponentInstantiation signal : new ArrayList<ComponentInstantiation>(Arrays.asList(spaRProteinComp_sig, spaR_P_ProteinComp_sig,spaKProteinComp_sig,spaK_P_ProteinComp_sig,subtilinComp_sig)))
+	    	 module.addComponentInstantiation(signal);
+	     for (Port port : new ArrayList<Port>(Arrays.asList(spaRProteinComp_port,spaR_P_ProteinComp_port, spaKProteinComp_port,spaK_P_ProteinComp_port,subtilinComp_port)))
+	    	 module.addPort(port);
+	     for (Interaction inter : new ArrayList<Interaction>(Arrays.asList(interactionSpaKActivation,interactionSpaRActivation)))
+	    	 module.addInteraction(inter);
+		 
 			return module;									
 		 }
 
@@ -467,10 +496,10 @@ public class SubtilinReceiver {
 	  private Module spaKspaRTwoComponentSystemModule()
 		 {
 		  	Module spaKSpaRProductionModule=spaKspaRProductionModule();
-		  	ModuleInstantiation spaKModule=(ModuleInstantiation)spaKSpaRProductionModule.getSubModules().toArray()[0];
-		  	ModuleInstantiation spaRModule=(ModuleInstantiation)spaKSpaRProductionModule.getSubModules().toArray()[0];
-		  	Port spaKSpaRProduction_SpaK_port=(Port)spaKModule.getInstantiates().getPorts().toArray()[1];
-		  	Port spaKSpaRProduction_SpaR_port=(Port)spaRModule.getInstantiates().getPorts().toArray()[1];
+		  	ModuleInstantiation spaKModule=(ModuleInstantiation)spaKSpaRProductionModule.getSubModuleInstantiations().toArray()[0];
+		  	ModuleInstantiation spaRModule=(ModuleInstantiation)spaKSpaRProductionModule.getSubModuleInstantiations().toArray()[0];
+		  	Port spaKSpaRProduction_SpaK_port=(Port)spaKModule.getInstantiatedModule().getPorts().toArray()[1];
+		  	Port spaKSpaRProduction_SpaR_port=(Port)spaRModule.getInstantiatedModule().getPorts().toArray()[1];
 
 		    Module spaRActivation=spaRActivationModule();
 		    Port spaRActivation_spaRProteinComp_port=(Port)spaRActivation.getPorts().toArray()[0];		    		    
@@ -513,15 +542,15 @@ public class SubtilinReceiver {
 		             spaRActivation_spaR_P_ProteinComp_port,
 		             pspaSActivation_SpaR_port.getExposes());*/	
 		     
-		     Signal spaR_sig = new Signal(
+		     ComponentInstantiation spaR_sig = new ProteinComponentInstantiation(
 				      URI.create("http://turingatemyhamter.co.uk/example#spaKspaRTwoComponentSystemModule/SpaR"),
 				      "SpaR_protein",
 				      spaRProteinComp); 
-			 Signal spaR_P_ProteinComp_sig = new Signal(
+		     ComponentInstantiation spaR_P_ProteinComp_sig = new ProteinComponentInstantiation(
 				      URI.create("http://turingatemyhamter.co.uk/example#spaKspaRTwoComponentSystemModule/SpaR_P_protein"),
 				      "SpaR_P_protein",
 				      spaRProteinComp);
-		     Signal spaK_sig = new Signal(
+		     ComponentInstantiation spaK_sig = new ProteinComponentInstantiation(
 				      URI.create("http://turingatemyhamter.co.uk/example#spaKspaRTwoComponentSystemModule/SpaK"),
 				      "SpaK_protein",
 				      spaKProteinComp); 
@@ -559,21 +588,25 @@ public class SubtilinReceiver {
 		     Module module=new Module(
 		    	     URI.create("http://turingatemyhamter.co.uk/example#"),
 				      "spaKspaR_two_component_system_module");
-		     module.setSubModules(new ArrayList<ModuleInstantiation>(Arrays.asList(subModuleSpaKSpaRProduction,subModuleSpaRActivation,subModulepspaSActivation)));	     	     
+		     for (ModuleInstantiation subMod : new ArrayList<ModuleInstantiation>(Arrays.asList(subModuleSpaKSpaRProduction,subModuleSpaRActivation,subModulepspaSActivation)))
+		     	module.addSubModuleInstantiation(subMod);
 		     //TODOmodule.setPortMaps(new ArrayList<PortMap>(Arrays.asList(portMapSpaR,portMapSpaK,portMapSpaR_P)));
+		     for (PortMap pmap : new ArrayList<PortMap>(Arrays.asList(portMapSpaR,portMapSpaK)))
+		    	 subModuleSpaKSpaRProduction.addPortMap(pmap);
+		     for (PortMap pmap : new ArrayList<PortMap>(Arrays.asList(portMapSpaRForSpaRActivation,portMapSpaKForSpaRActivation,portMapSpaR_P_ForSpaRActivation)))
+		    	 subModuleSpaRActivation.addPortMap(pmap);
+		     for (PortMap pmap : new ArrayList<PortMap>(Arrays.asList(portMapSpaR_P_For_pSpaS_Activation)))
+		    	 subModulepspaSActivation.addPortMap(pmap);
 		     
-		     subModuleSpaKSpaRProduction.setPortMaps(new ArrayList<PortMap>(Arrays.asList(portMapSpaR,portMapSpaK)));		     
-		     subModuleSpaRActivation.setPortMaps(new ArrayList<PortMap>(Arrays.asList(portMapSpaRForSpaRActivation,portMapSpaKForSpaRActivation,portMapSpaR_P_ForSpaRActivation)));
-		     subModulepspaSActivation.setPortMaps(new ArrayList<PortMap>(Arrays.asList(portMapSpaR_P_For_pSpaS_Activation)));
-			return module;									
+		     return module;									
 		 }
 
 	  public Module subtilinReporterSystemModule()
 		 {
 		  	Module spaKspaRTwoComponentSystem=spaKspaRTwoComponentSystemModule();
-		  	ModuleInstantiation subModulepspaSActivation=(ModuleInstantiation)spaKspaRTwoComponentSystem.getSubModules().toArray()[2];
+		  	ModuleInstantiation subModulepspaSActivation=(ModuleInstantiation)spaKspaRTwoComponentSystem.getSubModuleInstantiations().toArray()[2];
 		  			  	
-		  	Port spaKspaRTwoComponentSystem_pspaS_port=(Port)subModulepspaSActivation.getInstantiates().getPorts().toArray()[0];
+		  	Port spaKspaRTwoComponentSystem_pspaS_port=(Port)subModulepspaSActivation.getInstantiatedModule().getPorts().toArray()[0];
 		  	
 		  	
 		  	 Module gfpProduction=gfpProductionModule();
@@ -595,15 +628,16 @@ public class SubtilinReceiver {
 		     Module module=new Module(
 		    	     URI.create("http://turingatemyhamter.co.uk/example#subtilin_reporter_module"),
 				      "subtilin_reporter_module");
-		     module.setSubModules(new ArrayList<ModuleInstantiation>(Arrays.asList(subModuleSpaKSpaRTwoComponentSystem,subModuleSpaRActivation)));	     	     
-			 
+		     for (ModuleInstantiation subMod : new ArrayList<ModuleInstantiation>(Arrays.asList(subModuleSpaKSpaRTwoComponentSystem,subModuleSpaRActivation)))
+		    	 module.addSubModuleInstantiation(subMod);
+		     
 		     /*  PortMap portMapPspaS=new PortMap(
              URI.create("http://turingatemyhamter.co.uk/example#subtilin_reporter_module/tcs_pspaS_promoter:gfp_production_pspaS_promoter"),
              spaKspaRTwoComponentSystem_pspaS_port,
              gfpProduction_pspaS_port.getExposes());	*/	
 		     //module.setPortMaps(new ArrayList<PortMap>(Arrays.asList(portMapPspaS)));
 		     
-		     Signal pSpaS_sig = new Signal(
+		     ComponentInstantiation pSpaS_sig = new DnaComponentInstantiation(
 				      URI.create("http://turingatemyhamter.co.uk/example#subtilinReporterSystemModule/pSpaS"),
 				      "pspaSPromoter",
 				      pspaSPromoterComp); 
@@ -618,8 +652,10 @@ public class SubtilinReceiver {
 		             gfpProduction_pspaS_port,
 		             pSpaS_sig);	
 		     
-		     subModuleSpaKSpaRTwoComponentSystem.setPortMaps(new ArrayList<PortMap>(Arrays.asList(portMapPspaS_TCS)));
-		     subModuleSpaRActivation.setPortMaps(new ArrayList<PortMap>(Arrays.asList(portMapPspaS_Reporter)));
+		     for (PortMap pmap : new ArrayList<PortMap>(Arrays.asList(portMapPspaS_TCS)))
+		    	 subModuleSpaKSpaRTwoComponentSystem.addPortMap(pmap);
+		     for (PortMap pmap : new ArrayList<PortMap>(Arrays.asList(portMapPspaS_Reporter)))
+		    	 subModuleSpaRActivation.addPortMap(pmap);
 		     		     		     		     		     
 			return module;									
 		 }

@@ -5,22 +5,27 @@ import java.net.URI;
 /**
  * 
  * @author Ernst Oberortner
+ * @author Nicholas Roehner
  */
-public abstract class Documented 
-	extends Identified {
+public abstract class Documented extends Identified {
 
 	private String displayId;
 	private String name;
 	private String description;
 	
+	/**
+	 * 
+	 * @param identity an identity for the documented object
+	 * @param displayID a display ID for the documented object
+	 */
 	public Documented(URI identity, String displayId) {
 		super(identity);
 		this.displayId = displayId;
 	}
-
+	
 	/**
 	 * 
-	 * @return the displayId of the documented object
+	 * @return the documented object's display ID
 	 */
 	public String getDisplayId() {
 		return displayId;
@@ -28,7 +33,7 @@ public abstract class Documented
 
 	/**
 	 * 
-	 * @return the name of the documented object
+	 * @return the documented object's name
 	 */
 	public String getName() {
 		return name;
@@ -36,7 +41,7 @@ public abstract class Documented
 
 	/**
 	 * 
-	 * @param name ... the indented name of the documented object
+	 * @param name a name for the documented object
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -44,7 +49,7 @@ public abstract class Documented
 
 	/**
 	 * 
-	 * @return the description of the documented object
+	 * @return the documented object's description
 	 */
 	public String getDescription() {
 		return description;
@@ -52,7 +57,7 @@ public abstract class Documented
 
 	/**
 	 * 
-	 * @param description ... the description of the documented object
+	 * @param description a description for the documented object
 	 */
 	public void setDescription(String description) {
 		this.description = description;

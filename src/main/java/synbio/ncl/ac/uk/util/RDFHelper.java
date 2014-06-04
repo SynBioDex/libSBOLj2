@@ -76,7 +76,7 @@ public class RDFHelper {
 		 resource.addProperty (property, typeResource);
 	    }
 	 
-	 private String GetString() throws Exception
+	 private String getString() throws Exception
 		{
 			String rdfData=null;
 			ByteArrayOutputStream stream = new ByteArrayOutputStream();
