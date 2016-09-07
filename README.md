@@ -1,6 +1,5 @@
 libSBOLj
 ========
 
-[![Join the chat at https://gitter.im/SynBioDex/libSBOLj2](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/SynBioDex/libSBOLj2?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+This is an obsolete prototype.  Please go here for libSBOLj (https://github.com/SynBioDex/libSBOLj).
 
-Java Library for SBOL v2.0
